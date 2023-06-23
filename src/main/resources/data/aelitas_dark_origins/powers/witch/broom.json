@@ -5,8 +5,8 @@
 	"badges": [
 		{
 			"type": "origins:keybind",
-			"sprite": "origins:textures/gui/badge/toggle.png",
-			"text": "Hold %s to use"
+			"sprite": "aelitas_dark_origins:textures/item/broom.png",
+			"text": "Hold %s while holding a Broom to use"
 		}
 	],
 	"key": {
