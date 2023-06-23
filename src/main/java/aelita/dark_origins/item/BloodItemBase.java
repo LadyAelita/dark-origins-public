@@ -31,7 +31,11 @@ public class BloodItemBase extends Item {
 		if (level == null) {
 			return;
 		}
-		Player donor = level.getPlayerByUUID(getDonorUUID(stack));
+		UUID donorUUID = getDonorUUID(stack);
+		if (donorUUID == null) {
+			return;
+		}
+		Player donor = level.getPlayerByUUID(donorUUID);
 		if (donor == null) {
 			return;
 		}

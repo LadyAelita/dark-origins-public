@@ -1,6 +1,7 @@
 package aelita.dark_origins;
 
 import aelita.dark_origins.item.BloodItem;
+import aelita.dark_origins.item.EnchantedBloodItem;
 import aelita.dark_origins.item.RitualDaggerItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -15,6 +16,7 @@ public class Items {
 		= DeferredRegister.create(ForgeRegistries.ITEMS, DarkOriginsMod.MOD_ID);
 
 	public static final RegistryObject<Item> BLOOD = REGISTRY.register(BloodItem.ID, BloodItem.factory);
+	public static final RegistryObject<Item> ENCHANTED_BLOOD = REGISTRY.register(EnchantedBloodItem.ID, EnchantedBloodItem.factory);
 	public static final RegistryObject<Item> RITUAL_DAGGER = REGISTRY.register(RitualDaggerItem.ID, RitualDaggerItem.factory);
 
 	private static RegistryObject<Item> registerBlockItem(RegistryObject<Block> block) {
