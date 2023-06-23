@@ -84,6 +84,8 @@ public class RitualDaggerItem extends Item {
 
 		player.addItem(getDrawnBloodItemStack(player));
 
+		player.addItem(getDrawnBloodItemStack(player));
+
 		return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
 	}
 
