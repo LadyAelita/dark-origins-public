@@ -38,7 +38,7 @@
 					"item_condition": {
 						"type": "origins:ingredient",
 						"ingredient": {
-							"item": "minecraft:stick"
+							"item": "aelitas_dark_origins:broom"
 						}
 					}
 				},
@@ -48,7 +48,7 @@
 					"item_condition": {
 						"type": "origins:ingredient",
 						"ingredient": {
-							"item": "minecraft:stick"
+							"item": "aelitas_dark_origins:broom"
 						}
 					}
 				}
