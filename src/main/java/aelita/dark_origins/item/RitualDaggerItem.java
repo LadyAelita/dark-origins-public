@@ -11,7 +11,6 @@ import io.github.edwinmindcraft.origins.api.capabilities.IOriginContainer;
 import io.github.edwinmindcraft.origins.api.origin.Origin;
 import io.github.edwinmindcraft.origins.api.origin.OriginLayer;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -81,8 +80,9 @@ public class RitualDaggerItem extends Item {
 			itemStack.hurtAndBreak(1, player, (_player) -> {
 				_player.broadcastBreakEvent(hand);
 			});
-			serverPlayer.addItem(getDrawnBloodItemStack(player));
 		}
+
+		player.addItem(getDrawnBloodItemStack(player));
 
 		return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
 	}
@@ -136,7 +136,8 @@ public class RitualDaggerItem extends Item {
 
 		String playerName = player.getName().getString();
 		String bloodName = blood.getItem().getName(blood).getString();
-		String customName = I18n.get("gui.aelitas_dark_origins.players_blood", playerName, bloodName);
+		// TODO: Localize this somehow? I18n cannot be used server-side : <
+		String customName = String.format("%s's %s", playerName, bloodName)
 		blood.setHoverName(Component.literal(customName).withStyle(ChatFormatting.ITALIC));
 
 		return blood;
