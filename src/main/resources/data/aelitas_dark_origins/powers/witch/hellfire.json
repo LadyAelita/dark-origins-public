@@ -1,0 +1,210 @@
+{
+	"type": "origins:multiple",
+	"name": "Hellfire",
+	"description": "A witch activating a Fire Charge throws a fireball as opposed to setting a block on fire.",
+	"badges": [
+		{
+			"type": "origins:keybind",
+			"sprite": "minecraft:textures/item/fire_charge.png",
+			"text": "%s with a Fire Charge to use"
+		}
+	],
+	"prevent_default_fire_charge_use": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:fire_charge"
+			}
+		}
+	},
+	"swing_hand": {
+		"type": "origins:active_self",
+		"key": {
+			"key": "key.use"
+		},
+		"cooldown": 10,
+		"entity_action": {
+			"type": "origins:if_else_list",
+			"actions": [
+				{
+					"condition": {
+						"type": "origins:equipped_item",
+						"equipment_slot": "mainhand",
+						"item_condition": {
+							"type": "origins:ingredient",
+							"ingredient": {
+								"item": "minecraft:fire_charge"
+							}
+						}
+					},
+					"action": {
+						"type": "origins:swing_hand",
+						"hand": "MAIN_HAND"
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:equipped_item",
+						"equipment_slot": "offhand",
+						"item_condition": {
+							"type": "origins:ingredient",
+							"ingredient": {
+								"item": "minecraft:fire_charge"
+							}
+						}
+					},
+					"action": {
+						"type": "origins:swing_hand",
+						"hand": "OFF_HAND"
+					}
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:fire_charge"
+						}
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:fire_charge"
+						}
+					}
+				}
+			]
+		}
+	},
+	"throw_fireball": {
+		"type": "origins:fire_projectile",
+		"entity_type": "minecraft:fireball",
+		"key": {
+			"key": "key.use"
+		},
+		"start_delay": 1,
+		"speed": 0.5,
+		"divergence": 0.0,
+		"cooldown": 10,
+		"hud_render": {
+			"should_render": false
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:fire_charge"
+						}
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:fire_charge"
+						}
+					}
+				}
+			]
+		}
+	},
+	"consume_fire_charge": {
+		"type": "origins:active_self",
+		"key": {
+			"key": "key.use"
+		},
+		"cooldown": 10,
+		"entity_action": {
+			"type": "origins:delay",
+			"ticks": 1,
+			"action": {
+				"type": "origins:if_else_list",
+				"actions": [
+					{
+						"condition": {
+							"type": "origins:equipped_item",
+							"equipment_slot": "mainhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "minecraft:fire_charge"
+								}
+							}
+						},
+						"action": {
+							"type": "origins:equipped_item_action",
+							"equipment_slot": "mainhand",
+							"action": {
+								"type": "origins:consume",
+								"amount": 1
+							}
+						}
+					},
+					{
+						"condition": {
+							"type": "origins:equipped_item",
+							"equipment_slot": "offhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "minecraft:fire_charge"
+								}
+							}
+						},
+						"action": {
+							"type": "origins:equipped_item_action",
+							"equipment_slot": "offhand",
+							"action": {
+								"type": "origins:consume",
+								"amount": 1
+							}
+						}
+					}
+				]
+			}
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:fire_charge"
+						}
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:fire_charge"
+						}
+					}
+				}
+			]
+		}
+	}
+}

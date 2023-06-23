@@ -1,0 +1,19 @@
+{
+	"type": "origins:modify_damage_taken",
+	"name": "Witch Hunt",
+	"description": "Witches take 50% more damage from fire.",
+	"badges": [
+		{
+			"type": "origins:sprite",
+			"sprite": "minecraft:textures/item/campfire.png"
+		}
+	],
+	"damage_condition": {
+		"type": "origins:fire"
+	},
+	"modifier": {
+		"operation": "multiply_total_multiplicative",
+		"name": "Witch Hunt",
+		"value": 0.5
+	}
+}

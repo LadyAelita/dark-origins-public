@@ -1,0 +1,58 @@
+{
+	"type": "origins:multiple",
+	"name": "Witch's Broom",
+	"description": "Witches can use the new craftable Broom item. When holding a Broom, the Witch has Levitation and Slow-Falling.",
+	"badges": [
+		{
+			"type": "origins:keybind",
+			"sprite": "origins:textures/gui/badge/toggle.png",
+			"text": "Hold %s to use"
+		}
+	],
+	"activate": {
+		"type": "origins:active_self",
+		"key": {
+			"key": "key.origins.primary_active",
+			"continuous": true
+		},
+		"cooldown": 10,
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effects": [
+				{
+					"effect": "minecraft:levitation",
+					"duration": 20
+				},
+				{
+					"effect": "minecraft:slow_falling",
+					"duration": 20
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:stick"
+						}
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:stick"
+						}
+					}
+				}
+			]
+		}
+	}
+}
