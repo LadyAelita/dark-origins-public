@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="All Rights Reserved"
+showAsResourcePack=false
+
+[[mods]]
+	modId="aelitas_dark_origins"
+	version="${file.jarVersion}"
+	displayName="Aelita's Dark Origins"
+	authors="Aelita"
+	description="Adds a bunch of dark/mysterious player origins for the Origins mod."
+	displayTest="MATCH_VERSION"
+
+	[[dependencies.aelitas_dark_origins]]
+		modId="forge"
+		mandatory=true
+		versionRange="[43,)"
+		ordering="NONE"
+		side="BOTH"
+
+	[[dependencies.aelitas_dark_origins]]
+		modId="minecraft"
+		mandatory=true
+		versionRange="[1.19.2]"
+		ordering="NONE"
+		side="BOTH"
