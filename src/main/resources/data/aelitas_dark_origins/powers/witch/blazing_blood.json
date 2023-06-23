@@ -1,0 +1,157 @@
+{
+	"type": "origins:multiple",
+	"name": "Blazing Blood",
+	"description": "When Witches bleed themselves using a Ritual Dagger, they acquire Enchanted Blood. A witch can throw her own blood into fire, turning it into Blaze Powder.",
+	"badges": [
+		{
+			"type": "origins:keybind",
+			"sprite": "aelitas_dark_origins:textures/item/blood.png",
+			"text": "%s Enchanted Blood into nearby fire to use"
+		}
+	],
+	"transform_blood": {
+		"type": "origins:active_self",
+		"key": {
+			"key": "key.use"
+		},
+		"cooldown": 10,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else_list",
+					"actions": [
+						{
+							"condition": {
+								"type": "origins:equipped_item",
+								"equipment_slot": "mainhand",
+								"item_condition": {
+									"type": "origins:ingredient",
+									"ingredient": {
+										"item": "aelitas_dark_origins:enchanted_blood"
+									}
+								}
+							},
+							"action": {
+								"type": "origins:and",
+								"actions": [
+									{
+										"type": "origins:swing_hand",
+										"hand": "MAIN_HAND"
+									},
+									{
+										"type": "origins:equipped_item_action",
+										"equipment_slot": "mainhand",
+										"action": {
+											"type": "origins:consume",
+											"amount": 1
+										}
+									},
+									{
+										"type": "origins:give",
+										"stack": {
+											"item": "minecraft:blaze_powder",
+											"amount": 1
+										},
+										"preferred_slot": "mainhand"
+									}
+								]
+							}
+						},
+						{
+							"condition": {
+								"type": "origins:equipped_item",
+								"equipment_slot": "offhand",
+								"item_condition": {
+									"type": "origins:ingredient",
+									"ingredient": {
+										"item": "aelitas_dark_origins:enchanted_blood"
+									}
+								}
+							},
+							"action": {
+								"type": "origins:and",
+								"actions": [
+									{
+										"type": "origins:swing_hand",
+										"hand": "OFF_HAND"
+									},
+									{
+										"type": "origins:equipped_item_action",
+										"equipment_slot": "offhand",
+										"action": {
+											"type": "origins:consume",
+											"amount": 1
+										}
+									},
+									{
+										"type": "origins:give",
+										"stack": {
+											"item": "minecraft:blaze_powder",
+											"amount": 1
+										},
+										"preferred_slot": "offhand"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:item.firecharge.use",
+					"volume": 0.5,
+					"pitch": 0.8
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:block.fire.ambient",
+					"volume": 2.0,
+					"pitch": 1.0
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "mainhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "aelitas_dark_origins:enchanted_blood"
+								}
+							}
+						},
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "offhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "aelitas_dark_origins:enchanted_blood"
+								}
+							}
+						}
+					]
+				},
+				{
+					"type": "origins:raycast",
+					"distance": 3,
+					"block": true,
+					"entity": false,
+					"shape_type": "outline",
+					"fluid_handling": "any",
+					"block_condition": {
+						"type": "origins:in_tag",
+						"tag": "minecraft:fire"
+					}
+				}
+			]
+		}
+	}
+}
