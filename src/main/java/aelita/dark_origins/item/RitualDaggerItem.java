@@ -1,12 +1,23 @@
 package aelita.dark_origins.item;
 
+import java.util.NoSuchElementException;
 import java.util.function.Supplier;
 
+import aelita.dark_origins.DarkOriginsMod;
 import aelita.dark_origins.Items;
+import io.github.apace100.origins.Origins;
+import io.github.edwinmindcraft.origins.api.OriginsAPI;
+import io.github.edwinmindcraft.origins.api.capabilities.IOriginContainer;
+import io.github.edwinmindcraft.origins.api.origin.Origin;
+import io.github.edwinmindcraft.origins.api.origin.OriginLayer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.resources.language.I18n;
+import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -117,7 +128,8 @@ public class RitualDaggerItem extends Item {
 	}
 
 	private ItemStack getDrawnBloodItemStack(Player player) {
-		ItemStack blood = new ItemStack(Items.BLOOD.get(), 1);
+		Item bloodItem = getDrawnBloodItem(player);
+		ItemStack blood = new ItemStack(bloodItem, 1);
 
 		CompoundTag bloodNBT = blood.getOrCreateTagElement(BloodItemBase.TAG_BLOOD);
 		bloodNBT.putUUID(BloodItemBase.TAG_DONOR_UUID, player.getUUID());
@@ -128,5 +140,35 @@ public class RitualDaggerItem extends Item {
 		blood.setHoverName(Component.literal(customName).withStyle(ChatFormatting.ITALIC));
 
 		return blood;
+	}
+
+	private Item getDrawnBloodItem(Player player) {
+		if (playerHasOrigin(player, new ResourceLocation(DarkOriginsMod.MOD_ID, "witch"))) {
+			return Items.ENCHANTED_BLOOD.get();
+		} else {
+			return Items.BLOOD.get();
+		}
+	}
+
+	// TODO: Ughh, this is soo clunky atm ; <
+	private boolean playerHasOrigin(Player player, ResourceLocation originId) {
+		MinecraftServer server = player.getServer();
+		Registry<OriginLayer> originLayerRegistry = server != null
+			? OriginsAPI.getLayersRegistry(server)
+			: OriginsAPI.getLayersRegistry();
+		OriginLayer originLayer = originLayerRegistry.get(new ResourceLocation(Origins.MODID, "origin"));
+		if (originLayer == null) {
+			// TODO: Log warning here?
+			return false;
+		}
+
+		try {
+			IOriginContainer playerOrigins = player.getCapability(OriginsAPI.ORIGIN_CONTAINER).resolve().get();
+			ResourceKey<Origin> playerOriginKey = playerOrigins.getOrigin(originLayer);
+			ResourceLocation playerOriginId = playerOriginKey.location();
+			return (playerOriginId.compareNamespaced(originId)) == 0;
+		} catch (NoSuchElementException ex) {
+			return false;
+		}
 	}
 }
