@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"i"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:amethyst_shard"
+		},
+		"i": {
+			"item": "minecraft:iron_ingot"
+		}
+	},
+	"result": {
+		"item": "aelitas_dark_origins:ritual_dagger",
+		"count": 1
+	}
+}
