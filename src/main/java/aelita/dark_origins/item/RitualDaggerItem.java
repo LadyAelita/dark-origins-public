@@ -38,7 +38,7 @@ public class RitualDaggerItem extends Item {
 
 	public static final int COOLDOWN = 100;
 	public static final int DURABILITY = 32;
-	public static final CreativeModeTab creativeTab  = CreativeModeTab.TAB_TOOLS;
+	public static final CreativeModeTab CREATIVE_TAB  = CreativeModeTab.TAB_TOOLS;
 
 	public RitualDaggerItem(Properties properties) {
 		super(properties);
@@ -47,7 +47,7 @@ public class RitualDaggerItem extends Item {
 	public static Supplier<Item> factory = () -> new RitualDaggerItem(
 		(new Properties())
 			.durability(DURABILITY)
-			.tab(creativeTab)
+			.tab(CREATIVE_TAB)
 	);
 
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
