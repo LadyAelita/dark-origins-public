@@ -3,7 +3,10 @@ package aelita.dark_origins.item;
 import java.util.function.Supplier;
 
 import aelita.dark_origins.Items;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -118,6 +121,11 @@ public class RitualDaggerItem extends Item {
 
 		CompoundTag bloodNBT = blood.getOrCreateTagElement(BloodItemBase.TAG_BLOOD);
 		bloodNBT.putUUID(BloodItemBase.TAG_DONOR_UUID, player.getUUID());
+
+		String playerName = player.getName().getString();
+		String bloodName = blood.getItem().getName(blood).getString();
+		String customName = I18n.get("gui.aelitas_dark_origins.players_blood", playerName, bloodName);
+		blood.setHoverName(Component.literal(customName).withStyle(ChatFormatting.ITALIC));
 
 		return blood;
 	}
