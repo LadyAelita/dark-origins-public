@@ -73,9 +73,9 @@ public class RitualDaggerItem extends Item {
 			itemStack.hurtAndBreak(1, player, (_player) -> {
 				_player.broadcastBreakEvent(hand);
 			});
-		}
 
-		player.addItem(getDrawnBloodItemStack(player));
+			player.addItem(getDrawnBloodItemStack(player));
+		}
 
 		return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
 	}
