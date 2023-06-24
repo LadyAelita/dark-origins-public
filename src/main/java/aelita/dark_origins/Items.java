@@ -4,6 +4,7 @@ import aelita.dark_origins.item.BloodItem;
 import aelita.dark_origins.item.Broom;
 import aelita.dark_origins.item.EnchantedBloodItem;
 import aelita.dark_origins.item.RitualDaggerItem;
+import aelita.dark_origins.item.VampireBloodItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -19,6 +20,7 @@ public class Items {
 
 	public static final RegistryObject<Item> BLOOD = REGISTRY.register(BloodItem.ID, BloodItem.factory);
 	public static final RegistryObject<Item> ENCHANTED_BLOOD = REGISTRY.register(EnchantedBloodItem.ID, EnchantedBloodItem.factory);
+	public static final RegistryObject<Item> VAMPIRE_BLOOD = REGISTRY.register(VampireBloodItem.ID, VampireBloodItem.factory);
 
 	public static final RegistryObject<Item> BROOM = REGISTRY.register(Broom.ID, Broom.factory);
 	public static final RegistryObject<Item> RITUAL_DAGGER = REGISTRY.register(RitualDaggerItem.ID, RitualDaggerItem.factory);

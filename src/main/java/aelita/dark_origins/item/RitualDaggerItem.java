@@ -146,6 +146,8 @@ public class RitualDaggerItem extends Item {
 	private Item getDrawnBloodItem(Player player) {
 		if (playerHasOrigin(player, new ResourceLocation(DarkOriginsMod.MOD_ID, "witch"))) {
 			return Items.ENCHANTED_BLOOD.get();
+		} else if (playerHasOrigin(player, new ResourceLocation(DarkOriginsMod.MOD_ID, "vampire"))) {
+			return Items.VAMPIRE_BLOOD.get();
 		} else {
 			return Items.BLOOD.get();
 		}
