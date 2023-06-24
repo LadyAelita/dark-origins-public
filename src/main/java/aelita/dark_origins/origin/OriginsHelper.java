@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import javax.annotation.Nullable;
 
+import aelita.dark_origins.util.ResourceLocationUtils;
 import io.github.apace100.origins.Origins;
 import io.github.edwinmindcraft.origins.api.OriginsAPI;
 import io.github.edwinmindcraft.origins.api.capabilities.IOriginContainer;
@@ -16,6 +17,8 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.player.Player;
 
 public class OriginsHelper {
+	public static final ResourceLocation DEFAULT_LAYER_ID = new ResourceLocation(Origins.MODID, "origin");
+
 	public static @Nullable OriginLayer getOriginsLayer(Registry<OriginLayer> layerRegistry, ResourceLocation originLayerId) {
 		return layerRegistry.get(originLayerId);
 	}
@@ -48,7 +51,7 @@ public class OriginsHelper {
 		return origins.getOrigin(layer);
 	}
 	public static @Nullable ResourceKey<Origin> getPlayerOriginKey(Player player) {
-		return getPlayerOriginKey(player, new ResourceLocation(Origins.MODID, "origin"));
+		return getPlayerOriginKey(player, DEFAULT_LAYER_ID);
 	}
 
 	public static @Nullable ResourceLocation getPlayerOriginId(Player player, ResourceLocation originLayerId) {
@@ -59,7 +62,18 @@ public class OriginsHelper {
 		return key.location();
 	}
 	public static @Nullable ResourceLocation getPlayerOriginId(Player player) {
-		return getPlayerOriginId(player, new ResourceLocation(Origins.MODID, "origin"));
+		return getPlayerOriginId(player, DEFAULT_LAYER_ID);
+	}
+
+	public static boolean hasPlayerOrigin(Player player, ResourceLocation originLayerId, ResourceLocation originId) {
+		ResourceLocation currentOriginId = getPlayerOriginId(player, originLayerId);
+		return ResourceLocationUtils.isEqual(currentOriginId, originId);
+	}
+	public static boolean hasPlayerOrigin(Player player, ResourceLocation originId) {
+		return hasPlayerOrigin(player, DEFAULT_LAYER_ID, originId);
+	}
+	public static boolean hasPlayerOrigin(Player player, ResourceKey<Origin> originKey) {
+		return hasPlayerOrigin(player, originKey.registry(), originKey.location());
 	}
 
 	public static @Nullable IOriginContainer getPlayerOriginContainer(Player player) {
