@@ -1,0 +1,41 @@
+{
+	"type": "origins:stacking_status_effect",
+	"name": "Photophobia",
+	"description": "Vampires are blinded while exposed to sunlight.",
+	"badges": [
+		{
+			"type": "origins:sprite",
+			"sprite": "minecraft:textures/mob_effect/blindness.png"
+		}
+	],
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:exposed_to_sun"
+			},
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "head",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"tag": "aelitas_dark_origins:sunglasses"
+					}
+				},
+				"inverted": true
+			}
+		]
+	},
+	"min_stacks": 0,
+	"max_stacks": 1,
+	"duration_per_stack": 60,
+	"tick_rate": 20,
+	"effects": [
+		{
+			"effect": "minecraft:blindness",
+			"show_particles": false,
+			"duration": -1
+		}
+	]
+}

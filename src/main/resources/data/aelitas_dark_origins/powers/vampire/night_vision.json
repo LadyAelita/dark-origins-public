@@ -1,0 +1,15 @@
+{
+	"type": "origins:night_vision",
+	"name": "Nocturnal",
+	"description": "During the night, Vampires gain Night Vision.",
+	"badges": [
+		{
+			"type": "origins:sprite",
+			"sprite": "minecraft:textures/mob_effect/night_vision.png"
+		}
+	],
+	"condition": {
+		"type": "origins:daytime",
+		"inverted": true
+	}
+}

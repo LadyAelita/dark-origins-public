@@ -1,0 +1,57 @@
+{
+	"type": "origins:multiple",
+	"name": "Heat Intolerance",
+	"description": "Vampires are inflicted with Weakness and Mining Fatigue while in the Nether or exposed to sunlight.",
+	"badges": [
+		{
+			"type": "origins:sprite",
+			"sprite": "minecraft:textures/mob_effect/blindness.png"
+		}
+	],
+	"debuffs": {
+		"type": "origins:stacking_status_effect",
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:exposed_to_sun"
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether"
+				}
+			]
+		},
+		"min_stacks": -9,
+		"max_stacks": 1,
+		"duration_per_stack": 60,
+		"tick_rate": 20,
+		"effects": [
+			{
+				"effect": "minecraft:weakness",
+				"is_ambient": true,
+				"duration": -1
+			},
+			{
+				"effect": "minecraft:mining_fatigue",
+				"is_ambient": true,
+				"duration": -1
+			}
+		]
+	},
+	"shaking": {
+		"type": "origins:shaking",
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:exposed_to_sun"
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether"
+				}
+			]
+		}
+	}
+}
