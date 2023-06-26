@@ -4,6 +4,7 @@ import aelita.dark_origins.item.BloodItem;
 import aelita.dark_origins.item.Broom;
 import aelita.dark_origins.item.EnchantedBloodItem;
 import aelita.dark_origins.item.RitualDaggerItem;
+import aelita.dark_origins.item.SunscreenBottle;
 import aelita.dark_origins.item.VampireBloodItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -24,6 +25,7 @@ public class Items {
 
 	public static final RegistryObject<Item> BROOM = REGISTRY.register(Broom.ID, Broom.factory);
 	public static final RegistryObject<Item> RITUAL_DAGGER = REGISTRY.register(RitualDaggerItem.ID, RitualDaggerItem.factory);
+	public static final RegistryObject<Item> SUNSCREEN_BOTTLE = REGISTRY.register(SunscreenBottle.ID, SunscreenBottle.factory);
 
 	// "Icon items" - that is, unobtainable items that have no function outside
 	//  of having a specific texture. This can be used, for example, as icons
