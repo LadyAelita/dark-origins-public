@@ -14,7 +14,15 @@
 			"type": "origins:or",
 			"conditions": [
 				{
-					"type": "origins:exposed_to_sun"
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:exposed_to_sun"
+						},
+						{
+							"type": "origins:daytime"
+						}
+					]
 				},
 				{
 					"type": "origins:dimension",
@@ -45,7 +53,15 @@
 			"type": "origins:or",
 			"conditions": [
 				{
-					"type": "origins:exposed_to_sun"
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:exposed_to_sun"
+						},
+						{
+							"type": "origins:daytime"
+						}
+					]
 				},
 				{
 					"type": "origins:dimension",
