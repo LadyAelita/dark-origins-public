@@ -63,6 +63,11 @@
 					"conditions": [
 						{ "type": "origins:living" },
 						{
+							"type": "origins:entity_type",
+							"inverted": true,
+							"entity_type": "minecraft:armor_stand"
+						},
+						{
 							"type": "origins:in_tag",
 							"inverted": true,
 							"tag": "aelitas_dark_origins:bloodless"
@@ -109,6 +114,11 @@
 			"type": "origins:and",
 			"conditions": [
 				{ "type": "origins:living" },
+				{
+					"type": "origins:entity_type",
+					"inverted": true,
+					"entity_type": "minecraft:armor_stand"
+				},
 				{
 					"type": "origins:in_tag",
 					"inverted": true,
