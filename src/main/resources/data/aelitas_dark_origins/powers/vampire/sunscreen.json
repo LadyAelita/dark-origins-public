@@ -144,6 +144,13 @@
 					"sound": "minecraft:entity.witch.drink",
 					"volume": 1.0,
 					"pitch": 1.2
+				},
+				{
+					"type": "origins:give",
+					"stack": {
+						"item": "minecraft:glass_bottle",
+						"amount": 1
+					}
 				}
 			]
 		}
@@ -166,12 +173,27 @@
 			"amount": 1
 		},
 		"bientity_action": {
-			"type": "origins:target_action",
-			"action": {
-				"type": "origins:change_resource",
-				"resource": "*:*_stacks",
-				"change": 2
-			}
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:target_action",
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "*:*_stacks",
+						"change": 2
+					}
+				},
+				{
+					"type": "origins:actor_action",
+					"action": {
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:glass_bottle",
+							"amount": 1
+						}
+					}
+				}
+			]
 		},
 		"action_result": "success"
 	}
