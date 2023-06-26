@@ -3,7 +3,10 @@
 		"aelitas_dark_origins:common/undeath",
 		"aelitas_dark_origins:vampire/night_vision",
 		"aelitas_dark_origins:vampire/photophobia",
-		"aelitas_dark_origins:vampire/heat_intolerance"
+		"aelitas_dark_origins:vampire/heat_intolerance",
+		"aelitas_dark_origins:vampire/sunburn",
+		"aelitas_dark_origins:vampire/sunburn_protection",
+		"aelitas_dark_origins:vampire/sunscreen"
 	],
 	"icon": "aelitas_dark_origins:vampire_lips_icon",
 	"impact": 2,
