@@ -7,18 +7,32 @@ import javax.annotation.Nullable;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 public class BloodItemBase extends Item {
 	public static final String TAG_BLOOD = "Blood";
 	public static final String TAG_DONOR_UUID = "DonorUUID";
 
+	public static final FoodProperties FOOD = (new FoodProperties.Builder())
+		.nutrition(1).saturationMod(1.6f)
+		.effect(() -> new MobEffectInstance(MobEffects.POISON, 200), 0.2f)
+		.build();
+
 	public BloodItemBase(Item.Properties properties) {
 		super(properties);
+	}
+
+	@Override
+	public UseAnim getUseAnimation(ItemStack itemStack) {
+		return UseAnim.DRINK;
 	}
 
 	@Override
