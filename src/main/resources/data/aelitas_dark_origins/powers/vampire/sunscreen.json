@@ -39,27 +39,38 @@
 		},
 		"cooldown": 10,
 		"condition": {
-			"type": "origins:or",
+			"type": "origins:and",
 			"conditions": [
 				{
-					"type": "origins:equipped_item",
-					"equipment_slot": "mainhand",
-					"item_condition": {
-						"type": "origins:ingredient",
-						"ingredient": {
-							"item": "aelitas_dark_origins:sunscreen_bottle"
-						}
-					}
+					"type": "origins:resource",
+					"resource": "*:*_stacks",
+					"comparison": "<",
+					"compare_to": 4
 				},
 				{
-					"type": "origins:equipped_item",
-					"equipment_slot": "offhand",
-					"item_condition": {
-						"type": "origins:ingredient",
-						"ingredient": {
-							"item": "aelitas_dark_origins:sunscreen_bottle"
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "mainhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "aelitas_dark_origins:sunscreen_bottle"
+								}
+							}
+						},
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "offhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "aelitas_dark_origins:sunscreen_bottle"
+								}
+							}
 						}
-					}
+					]
 				}
 			]
 		},
@@ -162,6 +173,12 @@
 			"ingredient": {
 				"item": "aelitas_dark_origins:sunscreen_bottle"
 			}
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:*_stacks",
+			"comparison": "<",
+			"compare_to": 4
 		},
 		"bientity_condition": {
 			"type": "origins:distance",
