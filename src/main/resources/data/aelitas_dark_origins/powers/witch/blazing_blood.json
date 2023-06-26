@@ -10,93 +10,20 @@
 		}
 	],
 	"transform_blood": {
-		"type": "origins:active_self",
-		"key": {
-			"key": "key.use"
+		"type": "origins:action_on_block_use",
+		"block_condition": {
+			"type": "origins:in_tag",
+			"tag": "minecraft:fire"
 		},
-		"cooldown": 10,
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "aelitas_dark_origins:enchanted_blood"
+			}
+		},
 		"entity_action": {
 			"type": "origins:and",
 			"actions": [
-				{
-					"type": "origins:if_else_list",
-					"actions": [
-						{
-							"condition": {
-								"type": "origins:equipped_item",
-								"equipment_slot": "mainhand",
-								"item_condition": {
-									"type": "origins:ingredient",
-									"ingredient": {
-										"item": "aelitas_dark_origins:enchanted_blood"
-									}
-								}
-							},
-							"action": {
-								"type": "origins:and",
-								"actions": [
-									{
-										"type": "origins:swing_hand",
-										"hand": "MAIN_HAND"
-									},
-									{
-										"type": "origins:equipped_item_action",
-										"equipment_slot": "mainhand",
-										"action": {
-											"type": "origins:consume",
-											"amount": 1
-										}
-									},
-									{
-										"type": "origins:give",
-										"stack": {
-											"item": "minecraft:blaze_powder",
-											"amount": 1
-										},
-										"preferred_slot": "mainhand"
-									}
-								]
-							}
-						},
-						{
-							"condition": {
-								"type": "origins:equipped_item",
-								"equipment_slot": "offhand",
-								"item_condition": {
-									"type": "origins:ingredient",
-									"ingredient": {
-										"item": "aelitas_dark_origins:enchanted_blood"
-									}
-								}
-							},
-							"action": {
-								"type": "origins:and",
-								"actions": [
-									{
-										"type": "origins:swing_hand",
-										"hand": "OFF_HAND"
-									},
-									{
-										"type": "origins:equipped_item_action",
-										"equipment_slot": "offhand",
-										"action": {
-											"type": "origins:consume",
-											"amount": 1
-										}
-									},
-									{
-										"type": "origins:give",
-										"stack": {
-											"item": "minecraft:blaze_powder",
-											"amount": 1
-										},
-										"preferred_slot": "offhand"
-									}
-								]
-							}
-						}
-					]
-				},
 				{
 					"type": "origins:play_sound",
 					"sound": "minecraft:item.firecharge.use",
@@ -111,47 +38,14 @@
 				}
 			]
 		},
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:or",
-					"conditions": [
-						{
-							"type": "origins:equipped_item",
-							"equipment_slot": "mainhand",
-							"item_condition": {
-								"type": "origins:ingredient",
-								"ingredient": {
-									"item": "aelitas_dark_origins:enchanted_blood"
-								}
-							}
-						},
-						{
-							"type": "origins:equipped_item",
-							"equipment_slot": "offhand",
-							"item_condition": {
-								"type": "origins:ingredient",
-								"ingredient": {
-									"item": "aelitas_dark_origins:enchanted_blood"
-								}
-							}
-						}
-					]
-				},
-				{
-					"type": "origins:raycast",
-					"distance": 3,
-					"block": true,
-					"entity": false,
-					"shape_type": "outline",
-					"fluid_handling": "any",
-					"block_condition": {
-						"type": "origins:in_tag",
-						"tag": "minecraft:fire"
-					}
-				}
-			]
-		}
+		"held_item_action": {
+			"type": "origins:consume",
+			"amount": 1
+		},
+		"result_stack": {
+			"item": "minecraft:blaze_powder",
+			"amount": 1
+		},
+		"action_result": "success"
 	}
 }
