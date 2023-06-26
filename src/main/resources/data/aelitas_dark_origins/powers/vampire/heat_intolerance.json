@@ -5,7 +5,7 @@
 	"badges": [
 		{
 			"type": "origins:sprite",
-			"sprite": "minecraft:textures/mob_effect/blindness.png"
+			"sprite": "minecraft:textures/item/blaze_powder.png"
 		}
 	],
 	"debuffs": {
