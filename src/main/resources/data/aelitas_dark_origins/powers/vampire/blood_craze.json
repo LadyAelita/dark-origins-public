@@ -1,0 +1,154 @@
+{
+	"type": "origins:multiple",
+	"name": "Blood Craze",
+	"description": "A Vampire suffering from Blood Hunger is able to sense potential victims within a radius of 30 blocks, entering Blood Craze as soon as that happens, gaining Speed and Haste.\nBlood Craze ends 15 seconds after Blood Hunger ends.",
+	"badges": [
+		{
+			"type": "origins:sprite",
+			"sprite": "aelitas_dark_origins:textures/icon/vampire_lips_crazed.png"
+		}
+	],
+	"active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 15,
+		"start_value": 0,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"overlay": {
+		"type": "origins:overlay",
+		"texture": "minecraft:textures/misc/nausea.png",
+		"draw_mode": "nausea",
+		"draw_phase": "below_hud",
+		"strength": 1.0,
+		"red": 0.6,
+		"green": 0,
+		"blue": 0,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:*_active",
+			"comparison": ">=",
+			"compare_to": 1
+		}
+	},
+	"activate_near_potential_victims": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "aelitas_dark_origins:vampire/blood_hunger_active",
+					"comparison": "==",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:resource",
+					"resource": "*:*_active",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		},
+		"entity_action": {
+			"type": "origins:area_of_effect",
+			"radius": 32,
+			"bientity_condition": {
+				"type": "origins:target_condition",
+				"condition": {
+					"type": "origins:and",
+					"conditions": [
+						{ "type": "origins:living" },
+						{
+							"type": "origins:in_tag",
+							"inverted": true,
+							"tag": "aelitas_dark_origins:bloodless"
+						}
+					]
+				}
+			},
+			"bientity_action": {
+				"type": "origins:actor_action",
+				"action": {
+					"type": "origins:change_resource",
+					"resource": "*:*_active",
+					"operation": "set",
+					"change": 15
+				}
+			}
+		}
+	},
+	"deactivate_without_blood_hunger": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "aelitas_dark_origins:vampire/blood_hunger_active",
+			"comparison": "!=",
+			"compare_to": 1
+		},
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "*:*_active",
+			"operation": "add",
+			"change": -1
+		}
+	},
+	"potential_victims_glow": {
+		"type": "origins:entity_glow",
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:*_active",
+			"comparison": ">=",
+			"compare_to": 1
+		},
+		"entity_condition": {
+			"type": "origins:and",
+			"conditions": [
+				{ "type": "origins:living" },
+				{
+					"type": "origins:in_tag",
+					"inverted": true,
+					"tag": "aelitas_dark_origins:bloodless"
+				}
+			]
+		},
+		"bientity_condition": {
+			"type": "origins:distance",
+			"comparison": "<=",
+			"compare_to": 32
+		},
+		"use_teams": false,
+		"red": 0.6,
+		"blue": 0,
+		"green": 0
+	},
+	"buffs": {
+		"type": "origins:stacking_status_effect",
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:*_active",
+			"comparison": ">=",
+			"compare_to": 1
+		},
+		"min_stacks": 0,
+		"max_stacks": 1,
+		"duration_per_stack": 20,
+		"tick_rate": 10,
+		"effects": [
+			{
+				"effect": "minecraft:speed",
+				"amplifier": 3,
+				"duration": -1
+			},
+			{
+				"effect": "minecraft:haste",
+				"amplifier": 2,
+				"duration": -1
+			}
+		]
+	}
+}

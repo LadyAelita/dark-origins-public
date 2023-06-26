@@ -1,0 +1,27 @@
+{
+	"values": [
+		"#minecraft:skeletons",
+		"minecraft:allay",
+		"minecraft:axolotl",
+		"minecraft:bat",
+		"minecraft:bee",
+		"minecraft:blaze",
+		"minecraft:creeper",
+		"minecraft:ender_dragon",
+		"minecraft:elder_guardian",
+		"minecraft:frog",
+		"minecraft:ghast",
+		"minecraft:glow_squid",
+		"minecraft:guardian",
+		"minecraft:magma_cube",
+		"minecraft:shulker",
+		"minecraft:skeleton_horse",
+		"minecraft:slime",
+		"minecraft:snow_golem",
+		"minecraft:strider",
+		"minecraft:tadpole",
+		"minecraft:vex",
+		"minecraft:warden",
+		"minecraft:wither"
+	]
+}

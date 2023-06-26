@@ -1,0 +1,104 @@
+{
+	"type": "origins:multiple",
+	"name": "Blood Hunger",
+	"description": "A Vampire that's starving for food, or hasn't tasted blood for the last two nights, enters Blood Hunger.\nThe next killed creature will have a 100% chance of dropping blood, ending the Blood Hunger.\nThe Blood Hunger also ends as soon as the Vampire drinks blood.",
+	"badges": [
+		{
+			"type": "origins:sprite",
+			"sprite": "aelitas_dark_origins:textures/icon/vampire_lips_hungry.png"
+		}
+	],
+	"active": {
+		"type": "origins:resource",
+		"min": -1,
+		"max": 1,
+		"start_value": -1,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"has_dropped_blood_without_eating": {
+		"description": "This Vampire has recently acquired Blood by killing a creature during Blood Hunger. They can't activate Blood Hunger again through starvation until they either eat *and* starve again, or 48 hours pass.",
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"start_value": 0,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"overlay": {
+		"type": "origins:overlay",
+		"texture": "minecraft:textures/misc/nausea.png",
+		"draw_mode": "nausea",
+		"draw_phase": "below_hud",
+		"strength": 0.5,
+		"red": 0.6,
+		"green": 0,
+		"blue": 0,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:*_active",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"count_nights": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"condition": {
+			"type": "origins:daytime"
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "*:*_active",
+			"operation": "add",
+			"change": 1
+		}
+	},
+	"activate_when_starving": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"condition": {
+			"type": "origins:food_level",
+			"comparison": "<=",
+			"compare_to": 6
+		},
+		"rising_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "*:*_has_dropped_blood_without_eating",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			"if_action": {
+				"type": "origins:change_resource",
+				"resource": "*:*_active",
+				"operation": "set",
+				"change": 1
+			}
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "*:*_has_dropped_blood_without_eating",
+			"operation": "set",
+			"change": 0
+		}
+	},
+	"blood_consumption": {
+		"type": "origins:modify_food",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "aelitas_dark_origins:blood"
+			}
+		},
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "*:*_active",
+			"operation": "set",
+			"change": -1
+		}
+	}
+}

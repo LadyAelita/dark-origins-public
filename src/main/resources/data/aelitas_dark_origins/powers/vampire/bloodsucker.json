@@ -1,0 +1,77 @@
+{
+	"type": "origins:multiple",
+	"name": "Bloodsucker",
+	"description": "Vampires can drink Blood, which becomes an extremely high quality food for them. Creatures that have blood have 10% chance to drop it to the Vampire that kills them in melee.",
+	"badges": [
+		{
+			"type": "origins:sprite",
+			"sprite": "aelitas_dark_origins:textures/item/blood.png"
+		}
+	],
+	"any_blood": {
+		"type": "origins:modify_food",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "aelitas_dark_origins:blood"
+			}
+		},
+		"prevent_effects": true
+	},
+	"human_blood": {
+		"type": "origins:modify_food",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "aelitas_dark_origins:blood"
+			}
+		},
+		"food_modifier": {
+			"operation": "addition",
+			"value": 11
+		}
+	},
+	"enchanted_blood": {
+		"type": "origins:modify_food",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "aelitas_dark_origins:enchanted_blood"
+			}
+		},
+		"food_modifier": {
+			"operation": "addition",
+			"value": 14
+		}
+	},
+	"vampire_blood": {
+		"type": "origins:modify_food",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "aelitas_dark_origins:vampire_blood"
+			}
+		},
+		"food_modifier": {
+			"operation": "addition",
+			"value": 14
+		}
+	},
+	"high_quality_blood_nourishment": {
+		"type": "origins:modify_food",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "aelitas_dark_origins:blood/nourishing"
+			}
+		},
+		"always_edible": true,
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"effect": "farmersdelight:nourishment",
+				"duration": 100
+			}
+		}
+	}
+}
