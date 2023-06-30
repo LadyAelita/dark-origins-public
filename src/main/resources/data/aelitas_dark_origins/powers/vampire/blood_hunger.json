@@ -10,9 +10,9 @@
 	],
 	"active": {
 		"type": "origins:resource",
-		"min": -1,
+		"min": -2,
 		"max": 1,
-		"start_value": -1,
+		"start_value": -2,
 		"hud_render": {
 			"should_render": false
 		}
@@ -98,7 +98,7 @@
 			"type": "origins:change_resource",
 			"resource": "*:*_active",
 			"operation": "set",
-			"change": -1
+			"change": -2
 		}
 	}
 }
