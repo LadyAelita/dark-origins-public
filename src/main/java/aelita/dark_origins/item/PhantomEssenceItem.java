@@ -12,12 +12,12 @@ public class PhantomEssenceItem {
 	public static final String ID = "phantom_essence";
 
 	public static final FoodProperties VAMPIRE_FOOD = (new FoodProperties.Builder())
-		.nutrition(14).saturationMod(0.2f)
+		.nutrition(14).saturationMod(0.1f)
 		.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 100), 1.0f)
 		.build();
 
 	public static final FoodProperties HUMAN_FOOD = (new FoodProperties.Builder())
-		.nutrition(1).saturationMod(0.2f)
+		.nutrition(1).saturationMod(0.1f)
 		.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 200), 1.0f)
 		.build();
 

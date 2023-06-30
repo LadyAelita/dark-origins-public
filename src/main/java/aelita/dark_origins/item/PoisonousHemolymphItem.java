@@ -12,12 +12,12 @@ public class PoisonousHemolymphItem {
 	public static final String ID = "poisonous_hemolymph";
 
 	public static final FoodProperties VAMPIRE_FOOD = (new FoodProperties.Builder())
-		.nutrition(4).saturationMod(1.6f)
+		.nutrition(4).saturationMod(0.8f)
 		.effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 1), 1.0f)
 		.build();
 
 	public static final FoodProperties HUMAN_FOOD = (new FoodProperties.Builder())
-		.nutrition(1).saturationMod(1.6f)
+		.nutrition(1).saturationMod(0.8f)
 		.effect(() -> new MobEffectInstance(MobEffects.POISON, 200), 1.0f)
 		.build();
 

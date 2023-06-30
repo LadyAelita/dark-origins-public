@@ -12,11 +12,11 @@ public class AnimalBloodItem {
 	public static final String ID = "animal_blood";
 
 	public static final FoodProperties VAMPIRE_FOOD = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(1.6f)
+		.nutrition(6).saturationMod(0.8f)
 		.build();
 
 	public static final FoodProperties HUMAN_FOOD = (new FoodProperties.Builder())
-		.nutrition(1).saturationMod(1.6f)
+		.nutrition(1).saturationMod(0.8f)
 		.effect(() -> new MobEffectInstance(MobEffects.POISON, 200), 0.2f)
 		.build();
 

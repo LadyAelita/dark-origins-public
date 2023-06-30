@@ -12,11 +12,11 @@ public class HemolymphItem {
 	public static final String ID = "hemolymph";
 
 	public static final FoodProperties VAMPIRE_FOOD = (new FoodProperties.Builder())
-		.nutrition(4).saturationMod(1.2f)
+		.nutrition(4).saturationMod(0.6f)
 		.build();
 
 	public static final FoodProperties HUMAN_FOOD = (new FoodProperties.Builder())
-		.nutrition(1).saturationMod(1.2f)
+		.nutrition(1).saturationMod(0.6f)
 		.effect(() -> new MobEffectInstance(MobEffects.POISON, 200), 0.5f)
 		.build();
 

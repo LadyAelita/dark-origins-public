@@ -12,11 +12,11 @@ public class IllagerBloodItem {
 	public static final String ID = "illager_blood";
 
 	public static final FoodProperties VAMPIRE_FOOD = (new FoodProperties.Builder())
-		.nutrition(8).saturationMod(1.6f)
+		.nutrition(8).saturationMod(0.8f)
 		.build();
 
 	public static final FoodProperties HUMAN_FOOD = (new FoodProperties.Builder())
-		.nutrition(1).saturationMod(1.6f)
+		.nutrition(1).saturationMod(0.8f)
 		.effect(() -> new MobEffectInstance(MobEffects.POISON, 200), 0.4f)
 		.build();
 
