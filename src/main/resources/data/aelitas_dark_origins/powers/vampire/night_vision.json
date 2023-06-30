@@ -17,6 +17,7 @@
 	"duration_per_stack": 240,
 	"tick_rate": 20,
 	"effect": {
-		"effect": "minecraft:night_vision"
+		"effect": "minecraft:night_vision",
+		"is_ambient": true
 	}
 }
