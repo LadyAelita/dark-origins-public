@@ -5,10 +5,13 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
+import aelita.dark_origins.origin.OriginLocations;
+import aelita.dark_origins.origin.OriginsHelper;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -21,13 +24,30 @@ public class BloodItemBase extends Item {
 	public static final String TAG_BLOOD = "Blood";
 	public static final String TAG_DONOR_UUID = "DonorUUID";
 
-	public static final FoodProperties FOOD = (new FoodProperties.Builder())
-		.nutrition(1).saturationMod(1.6f)
-		.effect(() -> new MobEffectInstance(MobEffects.POISON, 200), 0.2f)
-		.build();
+	public final FoodProperties vampireFood;
+	public final FoodProperties humanFood;
 
-	public BloodItemBase(Item.Properties properties) {
+	public BloodItemBase(FoodProperties vampireFood, FoodProperties humanFood, Item.Properties properties) {
 		super(properties);
+		this.vampireFood = vampireFood;
+		this.humanFood = humanFood;
+	}
+
+	@Override
+	public @Nullable FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity) {
+		if (entity instanceof Player player && OriginsHelper.hasPlayerOrigin(player, OriginLocations.VAMPIRE)) {
+			return vampireFood;
+		}
+		return humanFood;
+	}
+
+	@Override
+	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+		ItemStack stack = player.getItemInHand(hand);
+		// if (!OriginsHelper.hasPlayerOrigin(player, OriginLocations.VAMPIRE)) {
+		// 	return InteractionResultHolder.fail(stack);
+		// }
+		return super.use(level, player, hand);
 	}
 
 	@Override

@@ -12,24 +12,27 @@ import net.minecraft.world.item.ItemStack;
 public class EnchantedBloodItem extends BloodItemBase {
 	public static final String ID = "enchanted_blood";
 
-	public static final FoodProperties FOOD = (new FoodProperties.Builder())
+	public static final FoodProperties VAMPIRE_FOOD = (new FoodProperties.Builder())
+		.nutrition(16).saturationMod(2.4f)
+		.build();
+
+	public static final FoodProperties HUMAN_FOOD = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(2.4f)
 		.effect(() -> new MobEffectInstance(MobEffects.POISON, 100), 0.1f)
 		.build();
 
 	public EnchantedBloodItem(Properties properties) {
-		super(properties);
+		super(VAMPIRE_FOOD, HUMAN_FOOD, properties);
 	}
 
 	@Override
-	public boolean isFoil(ItemStack p_41453_) {
+	public boolean isFoil(ItemStack stack) {
 		return true;
 	}
 
-	public static Supplier<Item> factory = () -> {
-		return new EnchantedBloodItem((new Item.Properties())
+	public static Supplier<Item> factory = () -> new EnchantedBloodItem(
+		(new Item.Properties())
 			.tab(CreativeModeTab.TAB_FOOD)
-			.food(FOOD)
-		);
-	};
+			.food(VAMPIRE_FOOD)
+	);
 }

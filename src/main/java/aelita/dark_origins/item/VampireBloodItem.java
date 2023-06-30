@@ -12,13 +12,17 @@ import net.minecraft.world.item.ItemStack;
 public class VampireBloodItem extends BloodItemBase {
 	public static final String ID = "vampire_blood";
 
-	public static final FoodProperties FOOD = (new FoodProperties.Builder())
+	public static final FoodProperties VAMPIRE_FOOD = (new FoodProperties.Builder())
+		.nutrition(16).saturationMod(2.4f)
+		.build();
+
+	public static final FoodProperties HUMAN_FOOD = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(2.4f)
-		.effect(() -> new MobEffectInstance(MobEffects.WITHER, 180, 2), 0.8f)
+		.effect(() -> new MobEffectInstance(MobEffects.POISON, 100), 0.1f)
 		.build();
 
 	public VampireBloodItem(Properties properties) {
-		super(properties);
+		super(VAMPIRE_FOOD, HUMAN_FOOD, properties);
 	}
 
 	@Override
@@ -29,6 +33,6 @@ public class VampireBloodItem extends BloodItemBase {
 	public static Supplier<Item> factory = () -> new VampireBloodItem(
 		(new Item.Properties())
 			.tab(CreativeModeTab.TAB_FOOD)
-			.food(FOOD)
+			.food(VAMPIRE_FOOD)
 	);
 }
