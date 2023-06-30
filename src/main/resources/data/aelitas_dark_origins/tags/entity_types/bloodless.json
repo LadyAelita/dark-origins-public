@@ -22,6 +22,8 @@
 		"minecraft:tadpole",
 		"minecraft:vex",
 		"minecraft:warden",
-		"minecraft:wither"
+		"minecraft:wither",
+
+		"#creeperoverhaul:creepers"
 	]
 }
