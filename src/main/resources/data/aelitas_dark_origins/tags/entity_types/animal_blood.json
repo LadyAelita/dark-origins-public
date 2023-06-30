@@ -26,6 +26,10 @@
 		"minecraft:trader_llama",
 		"minecraft:tropical_fish",
 		"minecraft:turtle",
-		"minecraft:wolf"
+		"minecraft:wolf",
+
+		"ars_nouveau:wilden_hunter",
+		"ars_nouveau:wilden_guardian",
+		"ars_nouveau:wilden_stalker"
 	]
 }
