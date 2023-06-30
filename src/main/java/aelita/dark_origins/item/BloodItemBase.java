@@ -43,10 +43,6 @@ public class BloodItemBase extends Item {
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-		ItemStack stack = player.getItemInHand(hand);
-		// if (!OriginsHelper.hasPlayerOrigin(player, OriginLocations.VAMPIRE)) {
-		// 	return InteractionResultHolder.fail(stack);
-		// }
 		return super.use(level, player, hand);
 	}
 
