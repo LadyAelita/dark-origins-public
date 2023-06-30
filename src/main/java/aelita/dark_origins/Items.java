@@ -1,5 +1,6 @@
 package aelita.dark_origins;
 
+import aelita.dark_origins.item.AnimalBloodItem;
 import aelita.dark_origins.item.BloodItem;
 import aelita.dark_origins.item.Broom;
 import aelita.dark_origins.item.EnchantedBloodItem;
@@ -23,6 +24,7 @@ public class Items {
 		= DeferredRegister.create(ForgeRegistries.ITEMS, DarkOriginsMod.MOD_ID);
 
 	public static final RegistryObject<Item> BLOOD = REGISTRY.register(BloodItem.ID, BloodItem.factory);
+	public static final RegistryObject<Item> ANIMAL_BLOOD = REGISTRY.register(AnimalBloodItem.ID, AnimalBloodItem.factory);
 	public static final RegistryObject<Item> ENCHANTED_BLOOD = REGISTRY.register(EnchantedBloodItem.ID, EnchantedBloodItem.factory);
 	public static final RegistryObject<Item> ENDER_BLOOD = REGISTRY.register(EnderBloodItem.ID, EnderBloodItem.factory);
 	public static final RegistryObject<Item> ILLAGER_BLOOD = REGISTRY.register(IllagerBloodItem.ID, IllagerBloodItem.factory);
