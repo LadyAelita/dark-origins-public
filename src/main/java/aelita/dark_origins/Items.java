@@ -3,6 +3,7 @@ package aelita.dark_origins;
 import aelita.dark_origins.item.AnimalBloodItem;
 import aelita.dark_origins.item.BloodItem;
 import aelita.dark_origins.item.Broom;
+import aelita.dark_origins.item.CoagulatedBloodItem;
 import aelita.dark_origins.item.EnchantedBloodItem;
 import aelita.dark_origins.item.EnderBloodItem;
 import aelita.dark_origins.item.IllagerBloodItem;
@@ -25,6 +26,7 @@ public class Items {
 
 	public static final RegistryObject<Item> BLOOD = REGISTRY.register(BloodItem.ID, BloodItem.factory);
 	public static final RegistryObject<Item> ANIMAL_BLOOD = REGISTRY.register(AnimalBloodItem.ID, AnimalBloodItem.factory);
+	public static final RegistryObject<Item> COAGULATED_BLOOD = REGISTRY.register(CoagulatedBloodItem.ID, CoagulatedBloodItem.factory);
 	public static final RegistryObject<Item> ENCHANTED_BLOOD = REGISTRY.register(EnchantedBloodItem.ID, EnchantedBloodItem.factory);
 	public static final RegistryObject<Item> ENDER_BLOOD = REGISTRY.register(EnderBloodItem.ID, EnderBloodItem.factory);
 	public static final RegistryObject<Item> ILLAGER_BLOOD = REGISTRY.register(IllagerBloodItem.ID, IllagerBloodItem.factory);
