@@ -13,7 +13,7 @@ public class VampireBloodItem extends BloodItemBase {
 	public static final String ID = "vampire_blood";
 
 	public static final FoodProperties VAMPIRE_FOOD = (new FoodProperties.Builder())
-		.nutrition(16).saturationMod(2.4f)
+		.nutrition(14).saturationMod(2.4f)
 		.build();
 
 	public static final FoodProperties HUMAN_FOOD = (new FoodProperties.Builder())
