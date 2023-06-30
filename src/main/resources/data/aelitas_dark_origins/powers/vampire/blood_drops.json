@@ -200,6 +200,69 @@
 			}
 		}
 	},
+	"villager_blood": {
+		"type": "origins:self_action_on_kill",
+		"cooldown": 1,
+		"target_condition": {
+			"type": "origins:in_tag",
+			"tag": "aelitas_dark_origins:villager_blood"
+		},
+		"damage_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:name",
+					"name": "player"
+				},
+				{
+					"type": "origins:name",
+					"name": "player.item"
+				}
+			]
+		},
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "aelitas_dark_origins:vampire/blood_hunger_active",
+				"comparison": "==",
+				"compare_to": 1
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "aelitas_dark_origins:villager_blood"
+						}
+					},
+					{
+						"type": "origins:change_resource",
+						"resource": "aelitas_dark_origins:vampire/blood_hunger_has_dropped_blood_without_eating",
+						"operation": "set",
+						"change": 1
+					},
+					{
+						"type": "origins:change_resource",
+						"resource": "aelitas_dark_origins:vampire/blood_hunger_active",
+						"operation": "set",
+						"change": -1
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:chance",
+				"chance": 0.1,
+				"action": {
+					"type": "origins:give",
+					"stack": {
+						"item": "aelitas_dark_origins:villager_blood"
+					}
+				}
+			}
+		}
+	},
 	"regular_blood": {
 		"type": "origins:self_action_on_kill",
 		"cooldown": 1,
@@ -215,6 +278,11 @@
 					"type": "origins:in_tag",
 					"inverted": true,
 					"tag": "aelitas_dark_origins:ender_blood"
+				},
+				{
+					"type": "origins:in_tag",
+					"inverted": true,
+					"tag": "aelitas_dark_origins:villager_blood"
 				},
 				{
 					"type": "origins:in_tag",
