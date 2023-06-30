@@ -28,8 +28,17 @@
 		"minecraft:turtle",
 		"minecraft:wolf",
 
-		"ars_nouveau:wilden_hunter",
-		"ars_nouveau:wilden_guardian",
-		"ars_nouveau:wilden_stalker"
+		{
+			"id": "ars_nouveau:wilden_hunter",
+			"required": false
+		},
+		{
+			"id": "ars_nouveau:wilden_guardian",
+			"required": false
+		},
+		{
+			"id": "ars_nouveau:wilden_stalker",
+			"required": false
+		}
 	]
 }

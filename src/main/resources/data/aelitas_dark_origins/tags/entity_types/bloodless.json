@@ -24,6 +24,9 @@
 		"minecraft:warden",
 		"minecraft:wither",
 
-		"#creeperoverhaul:creepers"
+		{
+			"id": "#creeperoverhaul:creepers",
+			"required": false
+		}
 	]
 }
