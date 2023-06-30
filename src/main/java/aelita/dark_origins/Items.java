@@ -4,6 +4,7 @@ import aelita.dark_origins.item.BloodItem;
 import aelita.dark_origins.item.Broom;
 import aelita.dark_origins.item.EnchantedBloodItem;
 import aelita.dark_origins.item.EnderBloodItem;
+import aelita.dark_origins.item.IllagerBloodItem;
 import aelita.dark_origins.item.RitualDaggerItem;
 import aelita.dark_origins.item.SunscreenBottle;
 import aelita.dark_origins.item.VampireBloodItem;
@@ -24,6 +25,7 @@ public class Items {
 	public static final RegistryObject<Item> BLOOD = REGISTRY.register(BloodItem.ID, BloodItem.factory);
 	public static final RegistryObject<Item> ENCHANTED_BLOOD = REGISTRY.register(EnchantedBloodItem.ID, EnchantedBloodItem.factory);
 	public static final RegistryObject<Item> ENDER_BLOOD = REGISTRY.register(EnderBloodItem.ID, EnderBloodItem.factory);
+	public static final RegistryObject<Item> ILLAGER_BLOOD = REGISTRY.register(IllagerBloodItem.ID, IllagerBloodItem.factory);
 	public static final RegistryObject<Item> VAMPIRE_BLOOD = REGISTRY.register(VampireBloodItem.ID, VampireBloodItem.factory);
 	public static final RegistryObject<Item> VILLAGER_BLOOD = REGISTRY.register(VillagerBloodItem.ID, VillagerBloodItem.factory);
 
