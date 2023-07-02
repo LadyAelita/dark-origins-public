@@ -34,6 +34,11 @@ public class BrewingRecipes {
 			addRecipe(oppositePotions.getFirst(), aelita.dark_origins.Items.ENDER_BLOOD.get(), oppositePotions.getSecond());
 			addRecipe(oppositePotions.getSecond(), aelita.dark_origins.Items.ENDER_BLOOD.get(), oppositePotions.getFirst());
 		}
+
+		// Enchanted Blood makes the effect of the potion stronger, or, if not possible, longer
+		for (Pair<Potion, Potion> pair : PotionsHelper.getEnhancedOrExtended()) {
+			addRecipe(pair.getFirst(), aelita.dark_origins.Items.ENCHANTED_BLOOD.get(), pair.getSecond());
+		}
 	}
 
 	private static void addRecipe(Potion input, ItemStack ingredient, ItemStack output) {
