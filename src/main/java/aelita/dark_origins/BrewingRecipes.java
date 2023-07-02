@@ -18,6 +18,8 @@ public class BrewingRecipes {
 		addRecipe(Potions.MUNDANE, aelita.dark_origins.Items.POISONOUS_HEMOLYMPH.get(), Potions.POISON);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.POISONOUS_HEMOLYMPH.get(), Potions.HARMING);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.COAGULATED_BLOOD.get(), Potions.HEALING);
+		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.ILLAGER_BLOOD.get(), Items.EXPERIENCE_BOTTLE);
+		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.BLOOD.get(), Items.EXPERIENCE_BOTTLE);
 	}
 
 	private static void addRecipe(Potion input, ItemStack ingredient, ItemStack output) {
