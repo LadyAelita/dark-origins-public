@@ -12,7 +12,7 @@ public class SpiderHemolymphItem {
 	public static final String ID = "spider_hemolymph";
 
 	public static final FoodProperties VAMPIRE_FOOD = (new FoodProperties.Builder())
-		.nutrition(4).saturationMod(0.6f)
+		.nutrition(8).saturationMod(0.6f)
 		.build();
 
 	public static final FoodProperties HUMAN_FOOD = (new FoodProperties.Builder())

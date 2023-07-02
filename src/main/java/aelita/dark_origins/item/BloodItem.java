@@ -12,7 +12,7 @@ public class BloodItem {
 	public static final String ID = "blood";
 
 	public static final FoodProperties VAMPIRE_FOOD = (new FoodProperties.Builder())
-		.nutrition(10).saturationMod(0.8f)
+		.nutrition(14).saturationMod(0.8f)
 		.build();
 
 	public static final FoodProperties HUMAN_FOOD = (new FoodProperties.Builder())
