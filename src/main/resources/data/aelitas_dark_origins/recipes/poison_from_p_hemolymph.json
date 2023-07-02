@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"G"
+	],
+	"key": {
+		"#": {
+			"item": "aelitas_dark_origins:poisonous_hemolymph"
+		},
+		"G": {
+			"item": "minecraft:glass_bottle"
+		}
+	},
+	"result": {
+		"item": "minecraft:potion",
+		"count": 1,
+		"nbt": {
+			"Potion": "poison"
+		}
+	}
+}
