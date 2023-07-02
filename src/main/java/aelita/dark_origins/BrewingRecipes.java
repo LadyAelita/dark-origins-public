@@ -22,6 +22,7 @@ public class BrewingRecipes {
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.BLOOD.get(), Items.EXPERIENCE_BOTTLE);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.PHANTOM_ESSENCE.get(), Potions.INVISIBILITY);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.ENDER_BLOOD.get(), Potions.NIGHT_VISION);
+		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.ENCHANTED_BLOOD.get(), Items.EXPERIENCE_BOTTLE);
 	}
 
 	private static void addRecipe(Potion input, ItemStack ingredient, ItemStack output) {
