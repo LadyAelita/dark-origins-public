@@ -14,6 +14,7 @@ public class BrewingRecipes {
 	private static void registerRecipes() {
 		addRecipe(Potions.MUNDANE, Items.SLIME_BALL, aelita.dark_origins.Items.SUNSCREEN_BOTTLE.get());
 
+		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.HEMOLYMPH.get(), Potions.SWIFTNESS);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.SPIDER_HEMOLYMPH.get(), Potions.HARMING);
 		addRecipe(Potions.MUNDANE, aelita.dark_origins.Items.POISONOUS_HEMOLYMPH.get(), Potions.POISON);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.POISONOUS_HEMOLYMPH.get(), Potions.HARMING);
