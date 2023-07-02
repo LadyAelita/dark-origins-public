@@ -1,5 +1,8 @@
 package aelita.dark_origins;
 
+import com.mojang.datafixers.util.Pair;
+
+import aelita.dark_origins.util.PotionsHelper;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -25,6 +28,12 @@ public class BrewingRecipes {
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.ENDER_BLOOD.get(), Potions.NIGHT_VISION);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.ENCHANTED_BLOOD.get(), Items.EXPERIENCE_BOTTLE);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.VAMPIRE_BLOOD.get(), Potions.STRONG_HARMING);
+
+		// Ender Blood flips the effect of the potion
+		for (Pair<Potion, Potion> oppositePotions : PotionsHelper.getOpposites()) {
+			addRecipe(oppositePotions.getFirst(), aelita.dark_origins.Items.ENDER_BLOOD.get(), oppositePotions.getSecond());
+			addRecipe(oppositePotions.getSecond(), aelita.dark_origins.Items.ENDER_BLOOD.get(), oppositePotions.getFirst());
+		}
 	}
 
 	private static void addRecipe(Potion input, ItemStack ingredient, ItemStack output) {
