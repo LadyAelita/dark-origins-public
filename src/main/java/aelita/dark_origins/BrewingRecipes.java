@@ -17,6 +17,7 @@ public class BrewingRecipes {
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.SPIDER_HEMOLYMPH.get(), Potions.HARMING);
 		addRecipe(Potions.MUNDANE, aelita.dark_origins.Items.POISONOUS_HEMOLYMPH.get(), Potions.POISON);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.POISONOUS_HEMOLYMPH.get(), Potions.HARMING);
+		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.COAGULATED_BLOOD.get(), Potions.HEALING);
 	}
 
 	private static void addRecipe(Potion input, ItemStack ingredient, ItemStack output) {
