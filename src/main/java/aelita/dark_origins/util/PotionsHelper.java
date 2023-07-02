@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Nullable;
+
 import com.mojang.datafixers.util.Pair;
 
 import net.minecraft.world.item.alchemy.Potion;
@@ -100,5 +102,12 @@ public class PotionsHelper {
 			improvedPotions.add(Pair.of(entry.getKey(), entry.getValue()));
 		}
 		return Collections.unmodifiableList(improvedPotions);
+	}
+
+	public static boolean isNull(@Nullable Potion potion) {
+		if (potion == null) {
+			return true;
+		}
+		return potion.getName("").equals("empty");
 	}
 }

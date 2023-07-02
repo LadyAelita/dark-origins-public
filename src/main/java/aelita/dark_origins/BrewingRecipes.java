@@ -3,6 +3,7 @@ package aelita.dark_origins;
 import com.mojang.datafixers.util.Pair;
 
 import aelita.dark_origins.util.PotionsHelper;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -12,6 +13,7 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class BrewingRecipes {
 	private static void registerRecipes() {
@@ -38,6 +40,19 @@ public class BrewingRecipes {
 		// Enchanted Blood makes the effect of the potion stronger, or, if not possible, longer
 		for (Pair<Potion, Potion> pair : PotionsHelper.getEnhancedOrExtended()) {
 			addRecipe(pair.getFirst(), aelita.dark_origins.Items.ENCHANTED_BLOOD.get(), pair.getSecond());
+		}
+
+		// Use certain modded potions, if they exist
+		final Potion manaRegenPotion = ForgeRegistries.POTIONS.getValue(new ResourceLocation("ars_nouveau", "mana_regen_potion"));
+		final Potion manaRegenPotionStrong = ForgeRegistries.POTIONS.getValue(new ResourceLocation("ars_nouveau", "mana_regen_potion_strong"));
+		final Potion manaRegenPotionLong = ForgeRegistries.POTIONS.getValue(new ResourceLocation("ars_nouveau", "mana_regen_potion_long"));
+		if (!PotionsHelper.isNull(manaRegenPotion)) {
+			addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.ENCHANTED_BLOOD.get(), manaRegenPotion);
+			if (!PotionsHelper.isNull(manaRegenPotionStrong)) {
+				addRecipe(manaRegenPotion, aelita.dark_origins.Items.ENCHANTED_BLOOD.get(), manaRegenPotionStrong);
+			} else if (!PotionsHelper.isNull(manaRegenPotionLong)) {
+				addRecipe(manaRegenPotion, aelita.dark_origins.Items.ENCHANTED_BLOOD.get(), manaRegenPotionLong);
+			}
 		}
 	}
 
