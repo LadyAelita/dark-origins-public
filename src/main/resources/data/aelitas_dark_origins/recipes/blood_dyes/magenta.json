@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"tag": "aelitas_dark_origins:blood/magenta"
+		}
+	],
+	"result": {
+		"item": "minecraft:magenta_dye",
+		"count": 2
+	}
+}

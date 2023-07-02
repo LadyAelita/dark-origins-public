@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"tag": "aelitas_dark_origins:blood/cyan"
+		}
+	],
+	"result": {
+		"item": "minecraft:cyan_dye",
+		"count": 2
+	}
+}
