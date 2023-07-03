@@ -23,10 +23,12 @@ public class CustomFluidType extends FluidType {
 	private static final ResourceLocation WATER_STILL = new ResourceLocation("block/water_still");
 	private static final ResourceLocation WATER_FLOW = new ResourceLocation("block/water_flow");
 	private static final @Nullable ResourceLocation FLUID_OVERLAY = null;
+	private static final @Nullable ResourceLocation FLUID_RENDER_OVERLAY = null;
 
 	private final ResourceLocation stillTexture;
 	private final ResourceLocation flowingTexture;
 	private final @Nullable ResourceLocation overlayTexture;
+	private final @Nullable ResourceLocation renderOverlayTexture;
 
 	private final int tintColor;
 	private final Vector3f fogColor;
@@ -37,6 +39,7 @@ public class CustomFluidType extends FluidType {
 		final ResourceLocation stillTexture,
 		final ResourceLocation flowingTexture,
 		final @Nullable ResourceLocation overlayTexture,
+		final @Nullable ResourceLocation renderOverlayTexture,
 		final int tintColor,
 		final Vector3f fogColor,
 		final Properties properties
@@ -45,6 +48,7 @@ public class CustomFluidType extends FluidType {
 		this.stillTexture = stillTexture;
 		this.flowingTexture = flowingTexture;
 		this.overlayTexture = overlayTexture;
+		this.renderOverlayTexture = renderOverlayTexture;
 		this.tintColor = tintColor;
 		this.fogColor = fogColor;
 		this.properties = properties;
@@ -54,10 +58,28 @@ public class CustomFluidType extends FluidType {
 		final ResourceLocation stillTexture,
 		final ResourceLocation flowingTexture,
 		final @Nullable ResourceLocation overlayTexture,
+		final @Nullable ResourceLocation renderOverlayTexture,
 		final int color,
 		final Properties properties
 	) {
-		this(stillTexture, flowingTexture, overlayTexture, color, ColorUtils.hexToRGB(color), properties);
+		this(stillTexture, flowingTexture, overlayTexture, renderOverlayTexture, color, ColorUtils.hexToRGB(color), properties);
+	}
+
+	public CustomFluidType(
+		final ResourceLocation renderOverlayTexture,
+		final int tintColor,
+		final Vector3f fogColor,
+		final Properties properties
+	) {
+		this(WATER_STILL, WATER_FLOW, FLUID_OVERLAY, renderOverlayTexture, tintColor, fogColor, properties);
+	}
+
+	public CustomFluidType(
+		final ResourceLocation renderOverlayTexture,
+		final int color,
+		final Properties properties
+	) {
+		this(renderOverlayTexture, color, ColorUtils.hexToRGB(color), properties);
 	}
 
 	public CustomFluidType(
@@ -65,7 +87,7 @@ public class CustomFluidType extends FluidType {
 		final Vector3f fogColor,
 		final Properties properties
 	) {
-		this(WATER_STILL, WATER_FLOW, FLUID_OVERLAY, tintColor, fogColor, properties);
+		this(WATER_STILL, WATER_FLOW, FLUID_OVERLAY, FLUID_RENDER_OVERLAY, tintColor, fogColor, properties);
 	}
 
 	public CustomFluidType(
@@ -100,9 +122,9 @@ public class CustomFluidType extends FluidType {
 
 			@Override
 			public @Nullable ResourceLocation getRenderOverlayTexture(Minecraft mc) {
-				return null;
+				return renderOverlayTexture;
 			}
-			
+
 			@Override
 			public @NotNull Vector3f modifyFogColor(
 				Camera camera, float partialTick, ClientLevel level, int renderDistance,
