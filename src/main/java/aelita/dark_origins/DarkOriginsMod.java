@@ -19,9 +19,14 @@ public class DarkOriginsMod {
 
 	private void initRegistries(IEventBus bus) {
 		// All registries must be hooked up this way
+		Blocks.REGISTRY.register(bus);
 		Items.REGISTRY.register(bus);
 
 		// Brewing recipes are kinda different
 		bus.addListener(BrewingRecipes::register);
+
+		// Fluids are a bit different too, the Fluid and FluidType registries
+		//  are encapsulated because of how complicated they get
+		Fluids.register(bus);
 	}
 }
