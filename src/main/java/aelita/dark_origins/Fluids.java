@@ -2,6 +2,7 @@ package aelita.dark_origins;
 
 import aelita.dark_origins.fluid.AnimalBloodFluid;
 import aelita.dark_origins.fluid.BloodFluid;
+import aelita.dark_origins.fluid.EnchantedBloodFluid;
 import aelita.dark_origins.fluid.EnderBloodFluid;
 import aelita.dark_origins.fluid.FluidFamily;
 import aelita.dark_origins.fluid.HemolymphFluid;
@@ -19,9 +20,10 @@ public class Fluids {
 		= DeferredRegister.create(ForgeRegistries.FLUIDS, DarkOriginsMod.MOD_ID);
 	public static final DeferredRegister<FluidType> FLUID_TYPES
 		= DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, DarkOriginsMod.MOD_ID);
-	
+
 	public static final FluidFamily BLOOD = BloodFluid.factory.get();
 	public static final FluidFamily ANIMAL_BLOOD = AnimalBloodFluid.factory.get();
+	public static final FluidFamily ENCHANTED_BLOOD = EnchantedBloodFluid.factory.get();
 	public static final FluidFamily ENDER_BLOOD = EnderBloodFluid.factory.get();
 	public static final FluidFamily ILLAGER_BLOOD = IllagerBloodFluid.factory.get();
 	public static final FluidFamily VILLAGER_BLOOD = VillagerBloodFluid.factory.get();
