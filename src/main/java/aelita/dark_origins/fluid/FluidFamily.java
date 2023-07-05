@@ -10,6 +10,7 @@ import aelita.dark_origins.Blocks;
 import aelita.dark_origins.Fluids;
 import aelita.dark_origins.Items;
 import net.minecraft.world.item.BucketItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -53,8 +54,9 @@ public class FluidFamily {
 		this.block = Blocks.REGISTRY.register(name, () -> new LiquidBlock(this.source, liquidBlockProperties));
 		fluidProperties.block(block);
 
-		final Item.Properties bucketProperties = bucketItemProperties != null ? bucketItemProperties
-			: new Item.Properties().craftRemainder(net.minecraft.world.item.Items.BUCKET).stacksTo(1);
+		final Item.Properties bucketProperties = bucketItemProperties != null
+			? bucketItemProperties
+			: defaultBucketItemProperties();
 		this.bucket = Items.REGISTRY.register(name + "_bucket", () -> new BucketItem(this.source, bucketProperties));
 		fluidProperties.bucket(bucket);
 
@@ -111,6 +113,13 @@ public class FluidFamily {
 	) {
 		this(name, typeFactory, fluidPropertiesTransformer, null, null);
 	}
+	public FluidFamily(
+		String name,
+		Supplier<CustomFluidType> typeFactory,
+		CreativeModeTab bucketTab
+	) {
+		this(name, typeFactory, null, null, defaultBucketItemProperties().tab(bucketTab));
+	}
 	public FluidFamily(String name, Supplier<CustomFluidType> typeFactory) {
 		this(name, typeFactory, null, null, null);
 	}
@@ -120,5 +129,12 @@ public class FluidFamily {
 	}
 	private Flowing createFlowing() {
 		return new ForgeFlowingFluid.Flowing(this.fluidProperties);
+	}
+
+	public static Item.Properties defaultBucketItemProperties() {
+		return new Item.Properties()
+			.craftRemainder(net.minecraft.world.item.Items.BUCKET)
+			.stacksTo(1)
+			.tab(CreativeModeTab.TAB_MISC);
 	}
 }
