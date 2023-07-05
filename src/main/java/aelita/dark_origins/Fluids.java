@@ -1,5 +1,6 @@
 package aelita.dark_origins;
 
+import aelita.dark_origins.fluid.AnimalBloodFluid;
 import aelita.dark_origins.fluid.BloodFluid;
 import aelita.dark_origins.fluid.FluidFamily;
 import net.minecraft.world.level.material.Fluid;
@@ -15,6 +16,7 @@ public class Fluids {
 		= DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, DarkOriginsMod.MOD_ID);
 	
 	public static final FluidFamily BLOOD = BloodFluid.factory.get();
+	public static final FluidFamily ANIMAL_BLOOD = AnimalBloodFluid.factory.get();
 
 	public static void register(IEventBus bus) {
 		FLUIDS.register(bus);
