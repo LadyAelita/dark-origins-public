@@ -98,7 +98,9 @@ public class CustomFluidType extends FluidType {
 				Camera camera, float partialTick, ClientLevel level, int renderDistance,
 				float darkenWorldAmount, Vector3f fluidFogColor
 			) {
-				return fogColor;
+				// NOTE: If I returned the original this.fogColor vector here,
+				//  it could get altered permanently!
+				return fogColor.copy();
 			}
 
 			@Override
