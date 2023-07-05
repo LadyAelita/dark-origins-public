@@ -2,6 +2,7 @@ package aelita.dark_origins;
 
 import aelita.dark_origins.fluid.AnimalBloodFluid;
 import aelita.dark_origins.fluid.BloodFluid;
+import aelita.dark_origins.fluid.EnderBloodFluid;
 import aelita.dark_origins.fluid.FluidFamily;
 import aelita.dark_origins.fluid.HemolymphFluid;
 import aelita.dark_origins.fluid.IllagerBloodFluid;
@@ -21,6 +22,7 @@ public class Fluids {
 	
 	public static final FluidFamily BLOOD = BloodFluid.factory.get();
 	public static final FluidFamily ANIMAL_BLOOD = AnimalBloodFluid.factory.get();
+	public static final FluidFamily ENDER_BLOOD = EnderBloodFluid.factory.get();
 	public static final FluidFamily ILLAGER_BLOOD = IllagerBloodFluid.factory.get();
 	public static final FluidFamily VILLAGER_BLOOD = VillagerBloodFluid.factory.get();
 	public static final FluidFamily HEMOLYMPH = HemolymphFluid.factory.get();
