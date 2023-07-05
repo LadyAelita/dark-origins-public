@@ -3,6 +3,7 @@ package aelita.dark_origins;
 import aelita.dark_origins.fluid.AnimalBloodFluid;
 import aelita.dark_origins.fluid.BloodFluid;
 import aelita.dark_origins.fluid.FluidFamily;
+import aelita.dark_origins.fluid.IllagerBloodFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fluids.FluidType;
@@ -17,6 +18,7 @@ public class Fluids {
 	
 	public static final FluidFamily BLOOD = BloodFluid.factory.get();
 	public static final FluidFamily ANIMAL_BLOOD = AnimalBloodFluid.factory.get();
+	public static final FluidFamily ILLAGER_BLOOD = IllagerBloodFluid.factory.get();
 
 	public static void register(IEventBus bus) {
 		FLUIDS.register(bus);

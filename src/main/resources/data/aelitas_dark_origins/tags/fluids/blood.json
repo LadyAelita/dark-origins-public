@@ -3,6 +3,8 @@
 		"aelitas_dark_origins:blood_flowing",
 		"aelitas_dark_origins:blood_source",
 		"aelitas_dark_origins:animal_blood_flowing",
-		"aelitas_dark_origins:animal_blood_source"
+		"aelitas_dark_origins:animal_blood_source",
+		"aelitas_dark_origins:illager_blood_flowing",
+		"aelitas_dark_origins:illager_blood_source"
 	]
 }
