@@ -33,68 +33,36 @@ public class CustomFluidType extends FluidType {
 	private final int tintColor;
 	private final Vector3f fogColor;
 
+	private final float setShaderFogStart;
+	private final float setShaderFogEnd;
+
 	private final Properties properties;
 
 	public CustomFluidType(
-		final ResourceLocation stillTexture,
-		final ResourceLocation flowingTexture,
-		final @Nullable ResourceLocation overlayTexture,
-		final @Nullable ResourceLocation renderOverlayTexture,
-		final int tintColor,
-		final Vector3f fogColor,
+		final RenderingProperties renderingProperties,
 		final Properties properties
 	) {
 		super(properties);
-		this.stillTexture = stillTexture;
-		this.flowingTexture = flowingTexture;
-		this.overlayTexture = overlayTexture;
-		this.renderOverlayTexture = renderOverlayTexture;
-		this.tintColor = tintColor;
-		this.fogColor = fogColor;
+
+		this.stillTexture = renderingProperties.stillTexture;
+		this.flowingTexture = renderingProperties.flowingTexture;
+		this.overlayTexture = renderingProperties.overlayTexture;
+		this.renderOverlayTexture = renderingProperties.renderOverlayTexture;
+		this.tintColor = renderingProperties.tintColor;
+		this.fogColor = renderingProperties.fogColor != null
+			? renderingProperties.fogColor
+			: ColorUtils.hexToRGB(tintColor);
+		this.setShaderFogStart = renderingProperties.setShaderFogStart;
+		this.setShaderFogEnd = renderingProperties.setShaderFogEnd;
+
 		this.properties = properties;
 	}
 
 	public CustomFluidType(
-		final ResourceLocation stillTexture,
-		final ResourceLocation flowingTexture,
-		final @Nullable ResourceLocation overlayTexture,
-		final @Nullable ResourceLocation renderOverlayTexture,
 		final int color,
 		final Properties properties
 	) {
-		this(stillTexture, flowingTexture, overlayTexture, renderOverlayTexture, color, ColorUtils.hexToRGB(color), properties);
-	}
-
-	public CustomFluidType(
-		final ResourceLocation renderOverlayTexture,
-		final int tintColor,
-		final Vector3f fogColor,
-		final Properties properties
-	) {
-		this(WATER_STILL, WATER_FLOW, FLUID_OVERLAY, renderOverlayTexture, tintColor, fogColor, properties);
-	}
-
-	public CustomFluidType(
-		final ResourceLocation renderOverlayTexture,
-		final int color,
-		final Properties properties
-	) {
-		this(renderOverlayTexture, color, ColorUtils.hexToRGB(color), properties);
-	}
-
-	public CustomFluidType(
-		final int tintColor,
-		final Vector3f fogColor,
-		final Properties properties
-	) {
-		this(WATER_STILL, WATER_FLOW, FLUID_OVERLAY, FLUID_RENDER_OVERLAY, tintColor, fogColor, properties);
-	}
-
-	public CustomFluidType(
-		final int color,
-		final Properties properties
-	) {
-		this(color, ColorUtils.hexToRGB(color), properties);
+		this(RenderingProperties.create(color), properties);
 	}
 
 	@Override
@@ -138,8 +106,8 @@ public class CustomFluidType extends FluidType {
 				float renderDistance, float partialTick, float nearDistance,
 				float farDistance, FogShape shape
 			) {
-				RenderSystem.setShaderFogStart(1.0f);
-				RenderSystem.setShaderFogEnd(6.0f);
+				RenderSystem.setShaderFogStart(setShaderFogStart);
+				RenderSystem.setShaderFogEnd(setShaderFogEnd);
 			}
 		});
 	}
@@ -166,5 +134,55 @@ public class CustomFluidType extends FluidType {
 
 	public Properties getProperties() {
 		return properties;
+	}
+
+	public static class RenderingProperties {
+		private ResourceLocation stillTexture = WATER_STILL;
+		private ResourceLocation flowingTexture = WATER_FLOW;
+		private @Nullable ResourceLocation overlayTexture = FLUID_OVERLAY;
+		private @Nullable ResourceLocation renderOverlayTexture = FLUID_RENDER_OVERLAY;
+
+		private int tintColor;
+		private @Nullable Vector3f fogColor = null;
+
+		private float setShaderFogStart = 1.0f;
+		private float setShaderFogEnd = 6.0f;
+
+		private RenderingProperties(int color) {
+			tintColor = color;
+		}
+
+		public RenderingProperties stillTexture(ResourceLocation texture) {
+			this.stillTexture = texture;
+			return this;
+		}
+		public RenderingProperties flowingTexture(ResourceLocation texture) {
+			this.flowingTexture = texture;
+			return this;
+		}
+		public RenderingProperties overlayTexture(@Nullable ResourceLocation texture) {
+			this.overlayTexture = texture;
+			return this;
+		}
+		public RenderingProperties renderOverlayTexture(@Nullable ResourceLocation texture) {
+			this.renderOverlayTexture = texture;
+			return this;
+		}
+		public RenderingProperties fogColor(@Nullable Vector3f fogColor) {
+			this.fogColor = fogColor;
+			return this;
+		}
+		public RenderingProperties setShaderFogStart(float value) {
+			this.setShaderFogStart = value;
+			return this;
+		}
+		public RenderingProperties setShaderFogEnd(float value) {
+			this.setShaderFogEnd = value;
+			return this;
+		}
+
+		public static RenderingProperties create(int color) {
+			return new RenderingProperties(color);
+		}
 	}
 }

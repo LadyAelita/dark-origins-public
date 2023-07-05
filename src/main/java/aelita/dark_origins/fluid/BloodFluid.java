@@ -13,7 +13,10 @@ public class BloodFluid extends BloodFluidBase {
 	public static final ResourceLocation OVERLAY_TEXTURE = new ResourceLocation(DarkOriginsMod.MOD_ID, "textures/overlay/blood.png");
 
 	public BloodFluid() {
-		super(OVERLAY_TEXTURE, COLOR, BloodFluidBase.createProperties());
+		super(
+			BloodFluidBase.defaultRenderProperties(COLOR),
+			BloodFluidBase.defaultProperties()
+		);
 	}
 
 	public static final Supplier<FluidFamily> factory = () -> new FluidFamily(ID,
