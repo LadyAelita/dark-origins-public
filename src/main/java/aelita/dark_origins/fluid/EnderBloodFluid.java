@@ -7,7 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 public class EnderBloodFluid extends BloodFluidBase {
 	public static final String ID = "ender_blood";
 
-	public static final int COLOR = 0xffd052fa;
+	public static final int COLOR = 0xffd83cff;
 
 	public static final ResourceLocation RENDER_OVERLAY_TEXTURE = new ResourceLocation("textures/misc/underwater.png");
 	public EnderBloodFluid() {
