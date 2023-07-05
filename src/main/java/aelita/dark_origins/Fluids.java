@@ -5,6 +5,7 @@ import aelita.dark_origins.fluid.BloodFluid;
 import aelita.dark_origins.fluid.FluidFamily;
 import aelita.dark_origins.fluid.HemolymphFluid;
 import aelita.dark_origins.fluid.IllagerBloodFluid;
+import aelita.dark_origins.fluid.SpiderHemolymphFluid;
 import aelita.dark_origins.fluid.VillagerBloodFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,6 +24,7 @@ public class Fluids {
 	public static final FluidFamily ILLAGER_BLOOD = IllagerBloodFluid.factory.get();
 	public static final FluidFamily VILLAGER_BLOOD = VillagerBloodFluid.factory.get();
 	public static final FluidFamily HEMOLYMPH = HemolymphFluid.factory.get();
+	public static final FluidFamily SPIDER_HEMOLYMPH = SpiderHemolymphFluid.factory.get();
 
 	public static void register(IEventBus bus) {
 		FLUIDS.register(bus);
