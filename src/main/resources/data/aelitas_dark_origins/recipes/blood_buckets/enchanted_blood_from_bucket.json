@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "aelitas_dark_origins:enchanted_blood_bucket"
+		}
+	],
+	"result": {
+		"item": "aelitas_dark_origins:enchanted_blood",
+		"count": 8
+	}
+}

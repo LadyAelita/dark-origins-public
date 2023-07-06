@@ -1,0 +1,36 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "aelitas_dark_origins:hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:hemolymph"
+		},
+		{
+			"item": "minecraft:bucket"
+		},
+		{
+			"item": "aelitas_dark_origins:hemolymph"
+		}
+	],
+	"result": {
+		"item": "aelitas_dark_origins:hemolymph_bucket",
+		"count": 1
+	}
+}

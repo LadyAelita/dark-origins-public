@@ -1,0 +1,36 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "aelitas_dark_origins:ender_blood"
+		},
+		{
+			"item": "aelitas_dark_origins:ender_blood"
+		},
+		{
+			"item": "aelitas_dark_origins:ender_blood"
+		},
+		{
+			"item": "aelitas_dark_origins:ender_blood"
+		},
+		{
+			"item": "aelitas_dark_origins:ender_blood"
+		},
+		{
+			"item": "aelitas_dark_origins:ender_blood"
+		},
+		{
+			"item": "aelitas_dark_origins:ender_blood"
+		},
+		{
+			"item": "minecraft:bucket"
+		},
+		{
+			"item": "aelitas_dark_origins:ender_blood"
+		}
+	],
+	"result": {
+		"item": "aelitas_dark_origins:ender_blood_bucket",
+		"count": 1
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "aelitas_dark_origins:spider_hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:spider_hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:spider_hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:spider_hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:spider_hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:spider_hemolymph"
+		},
+		{
+			"item": "aelitas_dark_origins:spider_hemolymph"
+		},
+		{
+			"item": "minecraft:bucket"
+		},
+		{
+			"item": "aelitas_dark_origins:spider_hemolymph"
+		}
+	],
+	"result": {
+		"item": "aelitas_dark_origins:spider_hemolymph_bucket",
+		"count": 1
+	}
+}
