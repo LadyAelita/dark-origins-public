@@ -102,6 +102,19 @@
 			"change": -1
 		}
 	},
+	"deactivate_on_sunrise": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"condition": {
+			"type": "origins:daytime"
+		},
+		"rising_action": {
+			"type": "origins:change_resource",
+			"resource": "*:*_active",
+			"operation": "set",
+			"change": 0
+		}
+	},
 	"potential_victims_glow": {
 		"type": "origins:entity_glow",
 		"condition": {
