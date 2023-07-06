@@ -116,6 +116,13 @@ public class FluidFamily {
 	public FluidFamily(
 		String name,
 		Supplier<CustomFluidType> typeFactory,
+		BlockBehaviour.Properties blockProperties
+	) {
+		this(name, typeFactory, null, blockProperties, null);
+	}
+	public FluidFamily(
+		String name,
+		Supplier<CustomFluidType> typeFactory,
 		CreativeModeTab bucketTab
 	) {
 		this(name, typeFactory, null, null, defaultBucketItemProperties().tab(bucketTab));
