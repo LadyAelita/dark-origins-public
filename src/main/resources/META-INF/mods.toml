@@ -28,6 +28,6 @@ showAsResourcePack=false
 	[[dependencies.aelitas_dark_origins]]
 		modId="origins"
 		mandatory=true
-		versionRange="[1.19.2-1.7.1.0,1.19.2-1.8.0.0)"
+		versionRange="[1.19.2-1.7.1.1,1.19.2-1.8.0.0)"
 		ordering="NONE"
 		side="BOTH"
