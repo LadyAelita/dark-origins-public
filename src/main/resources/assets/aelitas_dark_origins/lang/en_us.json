@@ -22,6 +22,17 @@
 	"item.aelitas_dark_origins.hemolymph_bucket": "Hemolymph Bucket",
 	"item.aelitas_dark_origins.spider_hemolymph_bucket": "Spider Hemolymph Bucket",
 
+	"item.aelitas_dark_origins.blood_bottle": "Blood Bottle",
+	"item.aelitas_dark_origins.animal_blood_bottle": "Animal Blood Bottle",
+	"item.aelitas_dark_origins.enchanted_blood_bottle": "Enchanted Blood Bottle",
+	"item.aelitas_dark_origins.ender_blood_bottle": "Ender Blood Bottle",
+	"item.aelitas_dark_origins.illager_blood_bottle": "Illager Blood Bottle",
+	"item.aelitas_dark_origins.vampire_blood_bottle": "Vampire Blood Bottle",
+	"item.aelitas_dark_origins.villager_blood_bottle": "Villager Blood Bottle",
+	"item.aelitas_dark_origins.hemolymph_bottle": "Hemolymph Bottle",
+	"item.aelitas_dark_origins.spider_hemolymph_bottle": "Spider Hemolymph Bottle",
+	"item.aelitas_dark_origins.poisonous_hemolymph_bottle": "Hemolymph Bottle",
+
 	"fluid_type.aelitas_dark_origins.blood": "Blood",
 	"fluid_type.aelitas_dark_origins.animal_blood": "Animal Blood",
 	"fluid_type.aelitas_dark_origins.coagulated_blood": "Coagulated Blood",
