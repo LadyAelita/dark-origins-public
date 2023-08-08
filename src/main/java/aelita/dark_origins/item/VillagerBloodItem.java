@@ -26,4 +26,11 @@ public class VillagerBloodItem {
 			.food(VAMPIRE_FOOD)
 		);
 	};
+
+	public static Supplier<Item> bottleFactory = () -> new BloodBottleItemBase(VAMPIRE_FOOD, HUMAN_FOOD,
+		(new Item.Properties())
+			.tab(CreativeModeTab.TAB_BREWING)
+			.food(VAMPIRE_FOOD)
+			.stacksTo(16)
+	);
 }

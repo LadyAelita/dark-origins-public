@@ -2,31 +2,31 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "aelitas_dark_origins:enchanted_blood"
+			"tag": "aelitas_dark_origins:blood/enchanted"
 		},
 		{
-			"item": "aelitas_dark_origins:enchanted_blood"
+			"tag": "aelitas_dark_origins:blood/enchanted"
 		},
 		{
-			"item": "aelitas_dark_origins:enchanted_blood"
+			"tag": "aelitas_dark_origins:blood/enchanted"
 		},
 		{
-			"item": "aelitas_dark_origins:enchanted_blood"
+			"tag": "aelitas_dark_origins:blood/enchanted"
 		},
 		{
-			"item": "aelitas_dark_origins:enchanted_blood"
+			"tag": "aelitas_dark_origins:blood/enchanted"
 		},
 		{
-			"item": "aelitas_dark_origins:enchanted_blood"
+			"tag": "aelitas_dark_origins:blood/enchanted"
 		},
 		{
-			"item": "aelitas_dark_origins:enchanted_blood"
+			"tag": "aelitas_dark_origins:blood/enchanted"
 		},
 		{
 			"item": "minecraft:bucket"
 		},
 		{
-			"item": "aelitas_dark_origins:enchanted_blood"
+			"tag": "aelitas_dark_origins:blood/enchanted"
 		}
 	],
 	"result": {

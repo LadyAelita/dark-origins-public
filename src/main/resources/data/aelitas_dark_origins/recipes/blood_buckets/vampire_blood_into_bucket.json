@@ -2,31 +2,31 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "aelitas_dark_origins:vampire_blood"
+			"tag": "aelitas_dark_origins:blood/vampire"
 		},
 		{
-			"item": "aelitas_dark_origins:vampire_blood"
+			"tag": "aelitas_dark_origins:blood/vampire"
 		},
 		{
-			"item": "aelitas_dark_origins:vampire_blood"
+			"tag": "aelitas_dark_origins:blood/vampire"
 		},
 		{
-			"item": "aelitas_dark_origins:vampire_blood"
+			"tag": "aelitas_dark_origins:blood/vampire"
 		},
 		{
-			"item": "aelitas_dark_origins:vampire_blood"
+			"tag": "aelitas_dark_origins:blood/vampire"
 		},
 		{
-			"item": "aelitas_dark_origins:vampire_blood"
+			"tag": "aelitas_dark_origins:blood/vampire"
 		},
 		{
-			"item": "aelitas_dark_origins:vampire_blood"
+			"tag": "aelitas_dark_origins:blood/vampire"
 		},
 		{
 			"item": "minecraft:bucket"
 		},
 		{
-			"item": "aelitas_dark_origins:vampire_blood"
+			"tag": "aelitas_dark_origins:blood/vampire"
 		}
 	],
 	"result": {

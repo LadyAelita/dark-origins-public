@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"tag": "aelitas_dark_origins:blood/cyan"
+			"tag": "aelitas_dark_origins:blood/pigmented/cyan"
 		}
 	],
 	"result": {

@@ -25,14 +25,36 @@ public class VampireBloodItem extends BloodItemBase {
 		super(VAMPIRE_FOOD, HUMAN_FOOD, properties);
 	}
 
+	private static boolean _isFoil(ItemStack stack) {
+		return false;
+	}
+
 	@Override
 	public boolean isFoil(ItemStack stack) {
-		return false;
+		return _isFoil(stack);
 	}
 
 	public static Supplier<Item> factory = () -> new VampireBloodItem(
 		(new Item.Properties())
 			.tab(CreativeModeTab.TAB_FOOD)
 			.food(VAMPIRE_FOOD)
+	);
+
+	public static class BottleItem extends BloodBottleItemBase {
+		public BottleItem(Properties properties) {
+			super(VAMPIRE_FOOD, HUMAN_FOOD, properties);
+		}
+
+		@Override
+		public boolean isFoil(ItemStack stack) {
+			return _isFoil(stack);
+		}
+	}
+
+	public static Supplier<Item> bottleFactory = () -> new BottleItem(
+		(new Item.Properties())
+			.tab(CreativeModeTab.TAB_BREWING)
+			.food(VAMPIRE_FOOD)
+			.stacksTo(16)
 	);
 }

@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "aelitas_dark_origins:hemolymph_bottle"
+		}
+	],
+	"result": {
+		"item": "aelitas_dark_origins:hemolymph",
+		"count": 1
+	}
+}

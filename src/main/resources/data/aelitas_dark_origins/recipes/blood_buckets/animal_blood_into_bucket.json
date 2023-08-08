@@ -2,31 +2,31 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "aelitas_dark_origins:animal_blood"
+			"tag": "aelitas_dark_origins:blood/animal"
 		},
 		{
-			"item": "aelitas_dark_origins:animal_blood"
+			"tag": "aelitas_dark_origins:blood/animal"
 		},
 		{
-			"item": "aelitas_dark_origins:animal_blood"
+			"tag": "aelitas_dark_origins:blood/animal"
 		},
 		{
-			"item": "aelitas_dark_origins:animal_blood"
+			"tag": "aelitas_dark_origins:blood/animal"
 		},
 		{
-			"item": "aelitas_dark_origins:animal_blood"
+			"tag": "aelitas_dark_origins:blood/animal"
 		},
 		{
-			"item": "aelitas_dark_origins:animal_blood"
+			"tag": "aelitas_dark_origins:blood/animal"
 		},
 		{
-			"item": "aelitas_dark_origins:animal_blood"
+			"tag": "aelitas_dark_origins:blood/animal"
 		},
 		{
 			"item": "minecraft:bucket"
 		},
 		{
-			"item": "aelitas_dark_origins:animal_blood"
+			"tag": "aelitas_dark_origins:blood/animal"
 		}
 	],
 	"result": {

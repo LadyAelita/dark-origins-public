@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:glass_bottle"
+		},
+		{
+			"item": "aelitas_dark_origins:enchanted_blood"
+		}
+	],
+	"result": {
+		"item": "aelitas_dark_origins:enchanted_blood_bottle",
+		"count": 1
+	}
+}

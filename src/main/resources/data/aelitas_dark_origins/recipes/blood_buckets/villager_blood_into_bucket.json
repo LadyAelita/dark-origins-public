@@ -2,31 +2,31 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "aelitas_dark_origins:villager_blood"
+			"tag": "aelitas_dark_origins:blood/villager"
 		},
 		{
-			"item": "aelitas_dark_origins:villager_blood"
+			"tag": "aelitas_dark_origins:blood/villager"
 		},
 		{
-			"item": "aelitas_dark_origins:villager_blood"
+			"tag": "aelitas_dark_origins:blood/villager"
 		},
 		{
-			"item": "aelitas_dark_origins:villager_blood"
+			"tag": "aelitas_dark_origins:blood/villager"
 		},
 		{
-			"item": "aelitas_dark_origins:villager_blood"
+			"tag": "aelitas_dark_origins:blood/villager"
 		},
 		{
-			"item": "aelitas_dark_origins:villager_blood"
+			"tag": "aelitas_dark_origins:blood/villager"
 		},
 		{
-			"item": "aelitas_dark_origins:villager_blood"
+			"tag": "aelitas_dark_origins:blood/villager"
 		},
 		{
 			"item": "minecraft:bucket"
 		},
 		{
-			"item": "aelitas_dark_origins:villager_blood"
+			"tag": "aelitas_dark_origins:blood/villager"
 		}
 	],
 	"result": {

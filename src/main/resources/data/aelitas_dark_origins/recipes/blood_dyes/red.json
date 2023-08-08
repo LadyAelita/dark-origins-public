@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"tag": "aelitas_dark_origins:blood/red"
+			"tag": "aelitas_dark_origins:blood/pigmented/red"
 		}
 	],
 	"result": {

@@ -1,5 +1,7 @@
 package aelita.dark_origins;
 
+import java.util.function.Supplier;
+
 import aelita.dark_origins.item.AnimalBloodItem;
 import aelita.dark_origins.item.BloodItem;
 import aelita.dark_origins.item.Broom;
@@ -28,6 +30,7 @@ public class Items {
 	public static final DeferredRegister<Item> REGISTRY
 		= DeferredRegister.create(ForgeRegistries.ITEMS, DarkOriginsMod.MOD_ID);
 
+	// Blood
 	public static final RegistryObject<Item> BLOOD = REGISTRY.register(BloodItem.ID, BloodItem.factory);
 	public static final RegistryObject<Item> ANIMAL_BLOOD = REGISTRY.register(AnimalBloodItem.ID, AnimalBloodItem.factory);
 	public static final RegistryObject<Item> COAGULATED_BLOOD = REGISTRY.register(CoagulatedBloodItem.ID, CoagulatedBloodItem.factory);
@@ -40,6 +43,20 @@ public class Items {
 	public static final RegistryObject<Item> HEMOLYMPH = REGISTRY.register(HemolymphItem.ID, HemolymphItem.factory);
 	public static final RegistryObject<Item> SPIDER_HEMOLYMPH = REGISTRY.register(SpiderHemolymphItem.ID, SpiderHemolymphItem.factory);
 	public static final RegistryObject<Item> POISONOUS_HEMOLYMPH = REGISTRY.register(PoisonousHemolymphItem.ID, PoisonousHemolymphItem.factory);
+
+	// Bottled blood
+	public static final RegistryObject<Item> BLOOD_BOTTLE = registerBloodBottleItem(BloodItem.ID, BloodItem.bottleFactory);
+	public static final RegistryObject<Item> ANIMAL_BLOOD_BOTTLE = registerBloodBottleItem(AnimalBloodItem.ID, AnimalBloodItem.bottleFactory);
+	// public static final RegistryObject<Item> COAGULATED_BLOOD_BOTTLE = registerBloodBottleItem(CoagulatedBloodItem.ID, CoagulatedBloodItem.bottleFactory);
+	public static final RegistryObject<Item> ENCHANTED_BLOOD_BOTTLE = registerBloodBottleItem(EnchantedBloodItem.ID, EnchantedBloodItem.bottleFactory);
+	public static final RegistryObject<Item> ENDER_BLOOD_BOTTLE = registerBloodBottleItem(EnderBloodItem.ID, EnderBloodItem.bottleFactory);
+	public static final RegistryObject<Item> ILLAGER_BLOOD_BOTTLE = registerBloodBottleItem(IllagerBloodItem.ID, IllagerBloodItem.bottleFactory);
+	// public static final RegistryObject<Item> PHANTOM_ESSENCE_BOTTLE = registerBloodBottleItem(PhantomEssenceItem.ID, PhantomEssenceItem.bottleFactory);
+	public static final RegistryObject<Item> VAMPIRE_BLOOD_BOTTLE = registerBloodBottleItem(VampireBloodItem.ID, VampireBloodItem.bottleFactory);
+	public static final RegistryObject<Item> VILLAGER_BLOOD_BOTTLE = registerBloodBottleItem(VillagerBloodItem.ID, VillagerBloodItem.bottleFactory);
+	public static final RegistryObject<Item> HEMOLYMPH_BOTTLE = registerBloodBottleItem(HemolymphItem.ID, HemolymphItem.bottleFactory);
+	public static final RegistryObject<Item> SPIDER_HEMOLYMPH_BOTTLE = registerBloodBottleItem(SpiderHemolymphItem.ID, SpiderHemolymphItem.bottleFactory);
+	public static final RegistryObject<Item> POISONOUS_HEMOLYMPH_BOTTLE = registerBloodBottleItem(PoisonousHemolymphItem.ID, PoisonousHemolymphItem.bottleFactory);
 
 	public static final RegistryObject<Item> BROOM = REGISTRY.register(Broom.ID, Broom.factory);
 	public static final RegistryObject<Item> RITUAL_DAGGER = REGISTRY.register(RitualDaggerItem.ID, RitualDaggerItem.factory);
@@ -63,5 +80,9 @@ public class Items {
 		return REGISTRY.register(id, () -> new Item(
 			(new Item.Properties()).rarity(Rarity.EPIC)
 		));
+	}
+
+	private static RegistryObject<Item> registerBloodBottleItem(final String itemId, final Supplier<Item> factory) {
+		return REGISTRY.register(itemId + "_bottle", factory);
 	}
 }

@@ -2,14 +2,16 @@
 	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"#",
-		"G"
+		"W"
 	],
 	"key": {
 		"#": {
 			"item": "aelitas_dark_origins:poisonous_hemolymph"
 		},
-		"G": {
-			"item": "minecraft:glass_bottle"
+		"W": {
+			"type": "forge:nbt",
+			"item": "minecraft:potion",
+			"nbt": "{Potion:\"minecraft:water\"}"
 		}
 	},
 	"result": {
