@@ -1,5 +1,7 @@
 package aelita.dark_origins;
 
+import java.util.List;
+
 import com.mojang.datafixers.util.Pair;
 
 import aelita.dark_origins.util.PotionsHelper;
@@ -42,6 +44,25 @@ public class BrewingRecipes {
 			addRecipe(pair.getFirst(), aelita.dark_origins.Items.ENCHANTED_BLOOD.get(), pair.getSecond());
 		}
 
+		// Blood purification recipes
+		final List<Item> purifiableBloodVials = List.of(
+			aelita.dark_origins.Items.ANIMAL_BLOOD_VIAL.get(),
+			aelita.dark_origins.Items.VILLAGER_BLOOD_VIAL.get(),
+			aelita.dark_origins.Items.ILLAGER_BLOOD_VIAL.get(),
+			aelita.dark_origins.Items.ENCHANTED_BLOOD_VIAL.get()
+		);
+		final List<Item> purifiableHemolymphVials = List.of(
+			aelita.dark_origins.Items.SPIDER_HEMOLYMPH_VIAL.get(),
+			aelita.dark_origins.Items.POISONOUS_HEMOLYMPH_VIAL.get()
+		);
+
+		for (final Item impureBloodVial : purifiableBloodVials) {
+			addRecipe(impureBloodVial, aelita.odds_and_ends.Items.DIAMOND_DUST.get(), aelita.dark_origins.Items.BLOOD_VIAL.get());
+		}
+		for (final Item impureHemolymphVial : purifiableHemolymphVials) {
+			addRecipe(impureHemolymphVial, aelita.odds_and_ends.Items.DIAMOND_DUST.get(), aelita.dark_origins.Items.HEMOLYMPH_VIAL.get());
+		}
+
 		// Use certain modded potions, if they exist
 		final Potion manaRegenPotion = ForgeRegistries.POTIONS.getValue(new ResourceLocation("ars_nouveau", "mana_regen_potion"));
 		final Potion manaRegenPotionStrong = ForgeRegistries.POTIONS.getValue(new ResourceLocation("ars_nouveau", "mana_regen_potion_strong"));
@@ -56,18 +77,24 @@ public class BrewingRecipes {
 		}
 	}
 
-	private static void addRecipe(Potion input, ItemStack ingredient, ItemStack output) {
+	private static void addRecipe(ItemStack input, ItemStack ingredient, ItemStack output) {
 		BrewingRecipeRegistry.addRecipe(
-			Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), input)),
+			Ingredient.of(input),
 			Ingredient.of(ingredient),
 			output
 		);
+	}
+	private static void addRecipe(Potion input, ItemStack ingredient, ItemStack output) {
+		addRecipe(PotionUtils.setPotion(new ItemStack(Items.POTION), input), ingredient, output);
 	}
 	private static void addRecipe(Potion input, Item ingredient, Item output) {
 		addRecipe(input, new ItemStack(ingredient), new ItemStack(output));
 	}
 	private static void addRecipe(Potion input, Item ingredient, Potion output) {
 		addRecipe(input, new ItemStack(ingredient), PotionUtils.setPotion(new ItemStack(Items.POTION), output));
+	}
+	private static void addRecipe(Item input, Item ingredient, Item output) {
+		addRecipe(new ItemStack(input), new ItemStack(ingredient), new ItemStack(output));
 	}
 
 	/**
