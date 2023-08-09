@@ -28,9 +28,11 @@ public class BrewingRecipes {
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.COAGULATED_BLOOD.get(), Potions.HEALING);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.ILLAGER_BLOOD.get(), Items.EXPERIENCE_BOTTLE);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.BLOOD.get(), Items.EXPERIENCE_BOTTLE);
+		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.BLOOD_VIAL.get(), Items.EXPERIENCE_BOTTLE);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.PHANTOM_ESSENCE.get(), Potions.INVISIBILITY);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.ENDER_BLOOD.get(), Potions.NIGHT_VISION);
 		addRecipe(Potions.MUNDANE, aelita.dark_origins.Items.ENCHANTED_BLOOD.get(), Items.EXPERIENCE_BOTTLE);
+		addRecipe(Potions.MUNDANE, aelita.dark_origins.Items.ENCHANTED_BLOOD_VIAL.get(), Items.EXPERIENCE_BOTTLE);
 		addRecipe(Potions.AWKWARD, aelita.dark_origins.Items.VAMPIRE_BLOOD.get(), Potions.STRONG_HARMING);
 
 		// Ender Blood flips the effect of the potion
