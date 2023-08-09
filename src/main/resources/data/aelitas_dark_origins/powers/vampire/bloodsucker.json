@@ -21,7 +21,7 @@
 			"type": "origins:apply_effect",
 			"effect": {
 				"effect": "farmersdelight:nourishment",
-				"duration": 600
+				"duration": 3600
 			}
 		}
 	}
