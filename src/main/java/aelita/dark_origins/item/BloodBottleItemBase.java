@@ -22,4 +22,21 @@ public class BloodBottleItemBase extends BloodItemBase {
 			return new ItemStack(Items.GLASS_BOTTLE);
 		}
 	}
+
+	@Override
+	public boolean hasCraftingRemainingItem() {
+		return true;
+	}
+	@Override
+	public boolean hasCraftingRemainingItem(ItemStack stack) {
+		return hasCraftingRemainingItem();
+	}
+
+	@Override
+	public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
+		if (!hasCraftingRemainingItem(itemStack)) {
+			return ItemStack.EMPTY;
+		}
+		return new ItemStack(Items.GLASS_BOTTLE);
+	}
 }
