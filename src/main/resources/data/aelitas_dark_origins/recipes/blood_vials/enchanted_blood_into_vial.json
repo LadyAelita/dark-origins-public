@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"tag": "aelitas_dark_origins:blood/enchanted"
+		},
+		{
+			"tag": "forge:vials"
+		},
+		{
+			"tag": "forge:vials"
+		},
+		{
+			"tag": "forge:vials"
+		}
+	],
+	"result": {
+		"item": "aelitas_dark_origins:enchanted_blood_vial",
+		"count": 3
+	}
+}

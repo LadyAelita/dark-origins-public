@@ -57,4 +57,20 @@ public class VampireBloodItem extends BloodItemBase {
 			.food(VAMPIRE_FOOD)
 			.stacksTo(16)
 	);
+
+	public static class VialItem extends BloodVialItemBase {
+		public VialItem(Properties properties) {
+			super(properties);
+		}
+
+		@Override
+		public boolean isFoil(ItemStack stack) {
+			return _isFoil(stack);
+		}
+	}
+
+	public static Supplier<Item> vialFactory = () -> new VialItem(
+		(new Item.Properties())
+			.tab(CreativeModeTab.TAB_BREWING)
+	);
 }

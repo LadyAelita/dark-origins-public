@@ -1,0 +1,6 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "aelitas_dark_origins:item/poisonous_hemolymph_vial"
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "aelitas_dark_origins:spider_hemolymph_vial"
+		},
+		{
+			"item": "aelitas_dark_origins:spider_hemolymph_vial"
+		},
+		{
+			"item": "aelitas_dark_origins:spider_hemolymph_vial"
+		}
+	],
+	"result": {
+		"item": "aelitas_dark_origins:spider_hemolymph",
+		"count": 1
+	}
+}

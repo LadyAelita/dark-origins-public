@@ -34,4 +34,9 @@ public class PoisonousHemolymphItem {
 			.food(VAMPIRE_FOOD)
 			.stacksTo(16)
 	);
+
+	public static Supplier<Item> vialFactory = () -> new BloodVialItemBase(
+		(new Item.Properties())
+			.tab(CreativeModeTab.TAB_BREWING)
+	);
 }

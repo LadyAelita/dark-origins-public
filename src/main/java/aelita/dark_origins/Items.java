@@ -58,6 +58,20 @@ public class Items {
 	public static final RegistryObject<Item> SPIDER_HEMOLYMPH_BOTTLE = registerBloodBottleItem(SpiderHemolymphItem.ID, SpiderHemolymphItem.bottleFactory);
 	public static final RegistryObject<Item> POISONOUS_HEMOLYMPH_BOTTLE = registerBloodBottleItem(PoisonousHemolymphItem.ID, PoisonousHemolymphItem.bottleFactory);
 
+	// Blood vials
+	public static final RegistryObject<Item> BLOOD_VIAL = registerBloodBottleVial(BloodItem.ID, BloodItem.vialFactory);
+	public static final RegistryObject<Item> ANIMAL_BLOOD_VIAL = registerBloodBottleVial(AnimalBloodItem.ID, AnimalBloodItem.vialFactory);
+	// public static final RegistryObject<Item> COAGULATED_BLOOD_VIAL = registerBloodBottleVial(CoagulatedBloodItem.ID, CoagulatedBloodItem.vialFactory);
+	public static final RegistryObject<Item> ENCHANTED_BLOOD_VIAL = registerBloodBottleVial(EnchantedBloodItem.ID, EnchantedBloodItem.vialFactory);
+	public static final RegistryObject<Item> ENDER_BLOOD_VIAL = registerBloodBottleVial(EnderBloodItem.ID, EnderBloodItem.vialFactory);
+	public static final RegistryObject<Item> ILLAGER_BLOOD_VIAL = registerBloodBottleVial(IllagerBloodItem.ID, IllagerBloodItem.vialFactory);
+	// public static final RegistryObject<Item> PHANTOM_ESSENCE_VIAL = registerBloodBottleVial(PhantomEssenceItem.ID, PhantomEssenceItem.vialFactory);
+	public static final RegistryObject<Item> VAMPIRE_BLOOD_VIAL = registerBloodBottleVial(VampireBloodItem.ID, VampireBloodItem.vialFactory);
+	public static final RegistryObject<Item> VILLAGER_BLOOD_VIAL = registerBloodBottleVial(VillagerBloodItem.ID, VillagerBloodItem.vialFactory);
+	public static final RegistryObject<Item> HEMOLYMPH_VIAL = registerBloodBottleVial(HemolymphItem.ID, HemolymphItem.vialFactory);
+	public static final RegistryObject<Item> SPIDER_HEMOLYMPH_VIAL = registerBloodBottleVial(SpiderHemolymphItem.ID, SpiderHemolymphItem.vialFactory);
+	public static final RegistryObject<Item> POISONOUS_HEMOLYMPH_VIAL = registerBloodBottleVial(PoisonousHemolymphItem.ID, PoisonousHemolymphItem.vialFactory);
+
 	public static final RegistryObject<Item> BROOM = REGISTRY.register(Broom.ID, Broom.factory);
 	public static final RegistryObject<Item> RITUAL_DAGGER = REGISTRY.register(RitualDaggerItem.ID, RitualDaggerItem.factory);
 	public static final RegistryObject<Item> SUNSCREEN_BOTTLE = REGISTRY.register(SunscreenBottle.ID, SunscreenBottle.factory);
@@ -84,5 +98,9 @@ public class Items {
 
 	private static RegistryObject<Item> registerBloodBottleItem(final String itemId, final Supplier<Item> factory) {
 		return REGISTRY.register(itemId + "_bottle", factory);
+	}
+
+	private static RegistryObject<Item> registerBloodBottleVial(final String itemId, final Supplier<Item> factory) {
+		return REGISTRY.register(itemId + "_vial", factory);
 	}
 }

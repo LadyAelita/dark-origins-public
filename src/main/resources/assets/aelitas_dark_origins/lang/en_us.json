@@ -33,6 +33,17 @@
 	"item.aelitas_dark_origins.spider_hemolymph_bottle": "Spider Hemolymph Bottle",
 	"item.aelitas_dark_origins.poisonous_hemolymph_bottle": "Hemolymph Bottle",
 
+	"item.aelitas_dark_origins.blood_vial": "Blood Vial",
+	"item.aelitas_dark_origins.animal_blood_vial": "Animal Blood Vial",
+	"item.aelitas_dark_origins.enchanted_blood_vial": "Enchanted Blood Vial",
+	"item.aelitas_dark_origins.ender_blood_vial": "Ender Blood Vial",
+	"item.aelitas_dark_origins.illager_blood_vial": "Illager Blood Vial",
+	"item.aelitas_dark_origins.vampire_blood_vial": "Vampire Blood Vial",
+	"item.aelitas_dark_origins.villager_blood_vial": "Villager Blood Vial",
+	"item.aelitas_dark_origins.hemolymph_vial": "Hemolymph Vial",
+	"item.aelitas_dark_origins.spider_hemolymph_vial": "Spider Hemolymph Vial",
+	"item.aelitas_dark_origins.poisonous_hemolymph_vial": "Hemolymph Vial",
+
 	"fluid_type.aelitas_dark_origins.blood": "Blood",
 	"fluid_type.aelitas_dark_origins.animal_blood": "Animal Blood",
 	"fluid_type.aelitas_dark_origins.coagulated_blood": "Coagulated Blood",
