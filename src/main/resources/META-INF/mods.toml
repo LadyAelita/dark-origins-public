@@ -31,10 +31,3 @@ showAsResourcePack=false
 		versionRange="[1.19.2-1.7.1.1,1.19.2-1.8.0.0)"
 		ordering="NONE"
 		side="BOTH"
-
-	[[dependencies.aelitas_dark_origins]]
-		modId="aelitas_odds_and_ends"
-		mandatory=true
-		versionRange="[1.19.2-forge-0.2.0,1.19.2-forge-1.0.0)"
-		ordering="NONE"
-		side="BOTH"

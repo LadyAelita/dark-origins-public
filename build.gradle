@@ -153,7 +153,6 @@ dependencies {
     // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
     implementation fg.deobf("top.theillusivec4.caelus:caelus-forge:${mc_version}-${caelus_version}")
     implementation fg.deobf("io.github.edwinmindcraft:origins-forge:${mc_version}-${origins_version}")
-    implementation fg.deobf("aelita:aelitas_odds_and_ends:${mc_version}-forge-${odds_and_ends_version}")
 
     annotationProcessor fg.deobf("org.spongepowered:mixin:${mixin_version}:processor")
     testAnnotationProcessor fg.deobf("org.spongepowered:mixin:${mixin_version}:processor")

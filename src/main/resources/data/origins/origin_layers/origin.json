@@ -1,7 +1,6 @@
 {
 	"replace": false,
 	"origins": [
-		"aelitas_dark_origins:witch",
 		"aelitas_dark_origins:vampire"
 	]
 }
